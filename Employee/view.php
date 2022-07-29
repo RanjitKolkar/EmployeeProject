@@ -1,5 +1,6 @@
 <?php include("admin_header.php"); 
 include 'dbConn.php';
+
 $add_action = 'employee';
 ?>
 <div class="container mt-2">
@@ -17,7 +18,7 @@ if($view_action == 'employee')
 {
 
 ?>
-            
+
           <h2>Employee details</h2>
         </div> 
 
@@ -30,7 +31,11 @@ $result=mysqli_query($db_conn,$query);
  if ($result->num_rows > 0):;?>
 
 
+            <div class="list-group">
+                <a href="export_excel.php?download=all_employee" class="btn btn-primary">Download Excel</a>
+            </div>
       <div class="table-responsive shadow-sm rounded">
+
         <table class="table table-hover">
           <thead class="thead bg-primary">           
             <tr>
@@ -119,7 +124,9 @@ $result=mysqli_query($db_conn,$query);
 ?>
 
             </tbody>
+
          </table>
+
         </div>
 
 <!-- End Fetch EMployee Details -->
