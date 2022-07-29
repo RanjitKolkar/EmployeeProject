@@ -17,7 +17,7 @@ if(isset($_POST['save']))
     {
 
         $search_name = $_POST['search_Name'];
-        $stmt = $con->prepare("select * from Employee where name like '%$search_name%'");
+        $stmt = $con->prepare("select * from Employee where name like '$name'");
         $stmt->execute();
         $employee_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
         // print_r($employee_details);
@@ -26,7 +26,7 @@ if(isset($_POST['save']))
         if(!empty($_POST['search_Rank']))
     {
         $search_phone = $_POST['search_Rank'];
-        $stmt = $con->prepare("select * from Employee where rank like '%$search_Rank%'");
+        $stmt = $con->prepare("select * from Employee where rank like '$rank'");
         $stmt->execute();
         $employee_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
         //print_r($employee_details);
@@ -36,12 +36,40 @@ if(isset($_POST['save']))
     {
         $searchErr = "Please enter the information";
     }
-    
+
+function getCourseList(){
+
+$query="select * from Employee limit 200"; // Fetch all the data from the table customers
+$result=mysqli_query($db_conn,$query);
+if ($result->num_rows > 0):;
+    while($array=mysqli_fetch_row($result)):?>
+
+              <tr>
+                  <td><?php echo $array[0];?></td>
+                  <td><?php echo $array[1];?></td>
+                  <td><?php echo $array[2];?></td>
+                  <td><?php echo $array[3];?></td>
+
+              </tr>
+
+<?php endwhile; ?>
+
+<?php else: ?>
+              <tr>
+                 <td colspan="3" rowspan="1" headers="">No Data Found</td>
+              </tr>
+<?php endif; 
+
+               mysqli_free_result($result); 
+}//end of if
+
+
+
 }
  
 ?> 
 
-<?php include('header.php') ?> 
+<?php include('admin_header.php') ?> 
 
 <div class="container mt-2">
   <div class="jumbotron">
@@ -115,6 +143,7 @@ function displaySearch($value,$searchBy,$searchErr) {
         <table class="table table-hover">
         <thead class="thead bg-primary">
           <tr>
+            <th>Action</th>
             <th>Id</th>
             <th>Employee Name</th>
             <th>rank</th>
@@ -124,6 +153,11 @@ function displaySearch($value,$searchBy,$searchErr) {
                     foreach($employee_details as $key=>$value)
                     {
                         ?> <tr>
+              <td> 
+
+                    <a href="edit.php?employee_id=<?php echo $value['employee_id'];?>&action=update_results" class="btn btn-primary">Update results</a>
+                    
+                </td>
             <td> <?php echo $value['employee_id'];?> </td>
             <td> <?php echo $value['name'];?> </td>
             <td> <?php echo $value['rank'];?> </td>

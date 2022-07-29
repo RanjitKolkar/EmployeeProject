@@ -3,7 +3,7 @@ session_start();
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
   <head>
     <meta charset="UTF-8">
     <title>Employee</title>

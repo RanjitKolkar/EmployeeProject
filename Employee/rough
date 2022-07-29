@@ -1,0 +1,31 @@
+ Rank 	Employee_ID 	Name 	Sub_management 	Section 	Category 	General_management 	
+
+ Course_Name 	Contract_location 	Start_Date 	End_Date 	quarter 	course_specialization 	course_plan 	days 	hours_per_day 	total_hours 	exam_result 	Notes 	Month 	
+
+
+
+Admin can
+
+Create Employee-  Enter Employee Details
+Create Course- Enter Course Details
+Assign roles
+
+Enroll Employee to course
+
+view all employee details
+view all course
+view employee enrolled to course
+
+
+
+Creation of databse
+exporting old excel data to new database
+Handling SQL Queries
+    Multiple join queries
+
+Displaying data
+Filtering the data
+
+
+
+

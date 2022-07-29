@@ -12,7 +12,7 @@ if(isset($_POST['submit_login']))
     {
         $user = $_POST['user'];
         $pass = $_POST['pass'];
-        $stmt = $con->prepare("select * from login where uname like '%$user%' and pass like '%$pass%'");
+        $stmt = $con->prepare("select * from login where uname like '$user' and pass like '$pass'");
         $stmt->execute();
 
         $login = $stmt->fetchAll(PDO::FETCH_ASSOC);
