@@ -113,27 +113,30 @@ if($view_action == 'edit_course')
 <?php
 if($view_action == 'update_results')
 {
+  $msg=1;
   ?>
   <div class="page-header">
       <h2>Update Results Data</h2>
+      <hr>
   </div>
 
     <div class="row">
         <div class="col-md-12">
             <?php
                  $employee_id=$_GET["employee_id"];  
-                 $query = "SELECT  * FROM Enrolled WHERE employee_id=$employee_id"; 
+                 // echo $employee_id;
+                 $query = "SELECT * FROM Enrolled WHERE employee_id=$employee_id"; 
                  $result=mysqli_query($db_conn,$query);
                  $mytable = mysqli_fetch_assoc($result);
-                 // echo count($mytable);
-                 if ($mytable!=NULL) {
-                    // $msg=1;
-                 } else {
-                    $msg=10;
-                 }
+                 // // echo count($mytable);
+                 // if ($mytable!=NULL) {
+                 //    // $msg=1;
+                 // } else {
+                 //    $msg=10;                    
+                 //  header ("Location: enroll.php?msg=".$msg."");
+                 // }
 
-                header ("Location: enroll.php?msg=".$msg."");
-                 $mytable = mysqli_fetch_assoc($result);
+                 // echo $mytable['employee_id'];
 
 
             ?>
@@ -141,11 +144,28 @@ if($view_action == 'update_results')
 
         <form action="update-results.php" method="POST">
 
-          <div class="form-group">
-            <label>Updating for <?php echo "employee_id:".$mytable['employee_id']." course_id:".$mytable['course_id']." course_name:".$mytable['course_name']; ?></label>
-             <input type="hidden" name="course_id" class="form-control" value="<?php echo $mytable['course_id']; ?> " >
-            <input type="hidden" name="employee_id" class="form-control" value="<?php echo $mytable['employee_id']; ?> " >
-          </div>    
+                <div class="form-group row">
+                    <div class="col input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Course ID</span>
+                        </div>
+                    <input type="text" name="course_id" class="form-control" value="<?php echo $mytable['course_id']; ?> " readonly>
+                  </div>
+                    <div class="col input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Employee ID</span>
+                        </div>
+                       <input type="text" name="employee_id" class="form-control" value="<?php echo $mytable['employee_id']; ?> " readonly>                
+                    </div>
+                                        <div class="col input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Course Name</span>
+                        </div>
+                       <input type="text" name="course_name" class="form-control" value="<?php echo $mytable['course_name']; ?> " readonly>                
+                    </div>
+                </div>
+
+  
                 
           <div class="form-group">
             <label >Exam Result</label>

@@ -17,7 +17,7 @@ if(isset($_POST['save']))
     {
 
         $search_name = $_POST['search_Name'];
-        $stmt = $con->prepare("select * from Employee where name like '$name'");
+        $stmt = $con->prepare("select * from Employee where name like '%$search_name%'");
         $stmt->execute();
         $employee_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
         // print_r($employee_details);
@@ -25,8 +25,8 @@ if(isset($_POST['save']))
     }
         if(!empty($_POST['search_Rank']))
     {
-        $search_phone = $_POST['search_Rank'];
-        $stmt = $con->prepare("select * from Employee where rank like '$rank'");
+        $search_rank = $_POST['search_Rank'];
+        $stmt = $con->prepare("select * from Employee where rank like '%$search_rank%'");
         $stmt->execute();
         $employee_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
         //print_r($employee_details);
@@ -75,17 +75,23 @@ if ($result->num_rows > 0):;
     <?php
 include 'toasts.php';?>
   <div class="jumbotron">
+    
+    <h3>Search the employee to be enrolled</h3>
+
+<hr>
     <form action="" method="post" class="mb-3">
-      <div class="select-block">
-        <select class="form-select btn-light" name="emp_search">
+      <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Search Employee</label>
+          </div>
+        <select class="form-select btn-light custom-select" id="inputGroupSelect01" name="emp_search">
           <option value="" disabled selected>Search By</option>
           <option value="id">Employee Id</option>
           <option value="name">Employee Name</option>
           <option value="rank">Employee Rank</option>
         </select>
       </div>
-      <br />
-      <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+      <input class="btn shadow btn-primary" type="submit" name="submit" value="Submit">
       <hr>
     </form> <?php
 
@@ -116,24 +122,35 @@ include 'toasts.php';?>
 
     <?php
 function displaySearch($value,$searchBy,$searchErr) {
-  echo "Enter Employee ".$value;?> 
+  ?> 
 
   <form class="form-horizontal" action="#" method="post">
-      <div class="form-group">
-        <div class="col-sm-6">
-          <input type="text" class="form-control" name="<?php echo $searchBy ?>" placeholder="Enter">
+      <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01"><?php echo "Enter Employee ".$value;?></label>
+          </div>
+          <input type="text" class="form-control" name="<?php echo $searchBy ?>" placeholder="<?php echo "Enter Employee ".$value;?>">
         </div>
-        <br>
-        <div class="col-sm-2">
-          <button type="submit" name="save" class="btn btn-outline-success">Search</button>
-        </div>
+          <button type="submit" name="save" class="btn shadow btn-success">Search</button>     
         <span class="error" style="color:red;"> <?php echo $searchErr;?> </span>
-      </div>
+     
     </form> <?php
 }
+
+function isEnrolled($employee_id,$db_conn) {
+
+$query="select * from Enrolled where employee_id='$employee_id'"; // Fetch all the data from the table customers
+$result=mysqli_query($db_conn,$query);
+if ($result->num_rows > 0):;
+return 1;
+else:return 0;
+endif; 
+
+               mysqli_free_result($result); 
+}//end of if
+
+
 ?>
-
-
 
     <hr>
     <div class="table-responsive shadow-sm rounded"> <?php
@@ -142,8 +159,8 @@ function displaySearch($value,$searchBy,$searchErr) {
                     echo '<tr>No data found</tr>';
                  }
                  else{?> 
-        <table class="table table-hover">
-        <thead class="thead bg-primary">
+        <table class="table border border-warning table-striped">
+        <thead class="thead bg-warning">
           <tr>
             <th>Action</th>
             <th>Id</th>
@@ -154,11 +171,20 @@ function displaySearch($value,$searchBy,$searchErr) {
         <tbody> <?php
                     foreach($employee_details as $key=>$value)
                     {
-                        ?> <tr>
-              <td> 
-                    <a href="enroll-process.php?employee_id=<?php echo $value['employee_id'];?>&employee_name=<?php echo $value['name'];?>" class="btn btn-primary">Enroll</a>
+    ?> <tr>
+              <td> <?php 
+                    if(isEnrolled($value['employee_id'],$db_conn))
+                    {?> 
+                        
+                        <!-- IF Enrolled -->
+                    <a  class="btn btn-secondary">Enrolled</a>
+                    <a href="edit.php?employee_id=<?php echo $value['employee_id'];?>&action=update_results" class="btn btn-success">Update results</a>
+<?php }else {    ?>     
 
-                    <a href="edit.php?employee_id=<?php echo $value['employee_id'];?>&action=update_results" class="btn btn-primary">Update results</a>
+                        <!-- IF NOT Enrolled -->
+                    <a href="enroll-process.php?employee_id=<?php echo $value['employee_id'];?>&employee_name=<?php echo $value['name'];?>" class="btn btn-primary">Enroll</a>
+<?php }?>
+                    
                     
                 </td>
             <td> <?php echo $value['employee_id'];?> </td>

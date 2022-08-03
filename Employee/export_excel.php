@@ -5,31 +5,9 @@ if(isset($_GET['download'])){
    $add_action = $_GET['download']; 
 } 
 
-Class dbObj{
-  /* Database connection start */
-  var $dbhost = "localhost";
-  var $username = "root";
-  var $password = "";
-  var $dbname = "myEmpl";
-  var $conn;
-
-  function getConnstring() {
-    $con = mysqli_connect($this->dbhost, $this->username, $this->password, $this->dbname) or die("Connection failed: " . mysqli_connect_error());
-    /* check connection */
-    if (mysqli_connect_errno()) {
-      printf("Connect failed: %s\n", mysqli_connect_error());
-      exit();
-    } else {
-      $this->conn = $con;
-    }
-    return $this->conn;
-  }
-
-}
-  
+include 'dbConn.php';
 $tasks = array();
-$db = new dbObj();
-$connString =  $db->getConnstring();
+$connString =  $db_conn;
 
 if($add_action == 'all_employee'){
 getAllEmployee($connString); 

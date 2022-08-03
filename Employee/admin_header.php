@@ -10,10 +10,10 @@ session_start();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
-  <body>
+   <body style="">
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="adminhome.php">Employee</a>
@@ -26,7 +26,7 @@ session_start();
           </ul>
 
             <li class="nav-item" style=" list-style-type: none;">
-<button type="button" class="btn btn-success" data-placement="bottom" title="logout" data-toggle="modal" data-target="#logoutModal">Welcome, <?php  echo $_SESSION['username']?> </button>
+<button type="button" class="btn shadow btn-success" data-placement="bottom" title="logout" data-toggle="modal" data-target="#logoutModal">Welcome, <?php  echo $_SESSION['username']?> </button>
 
 
           </li>
@@ -57,8 +57,8 @@ session_start();
               </div>
           
               
-              <button class="btn btn-primary" type="submit" name="submit_login">Login</button>
-               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <button class="btn btn-primary shadow" type="submit" name="submit_login">Login</button>
+               <button type="button" class="btn btn-danger shadow" data-dismiss="modal">Close</button>
               </div>
             </div>
             
@@ -77,7 +77,7 @@ session_start();
                 <!-- Modal body -->
             <div class="modal-body">                 
               
-              <button class="btn btn-danger" type="submit" name="submit_login">logout</button>
+              <button class="btn btn-danger shadow" type="submit" name="submit_login">logout</button>
               </div>
             </div>
             

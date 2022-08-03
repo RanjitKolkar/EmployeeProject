@@ -20,6 +20,7 @@ if($view_action == 'employee')
 ?>
 
           <h2>Employee details</h2>
+          <hr>
         </div> 
 
 <?php
@@ -32,12 +33,11 @@ $result=mysqli_query($db_conn,$query);
 
 
             <div class="list-group">
-                <a href="export_excel.php?download=all_employee" class="btn btn-primary">Download Excel</a>
+                <a href="export_excel.php?download=all_employee" class="btn shadow btn-success">Export to Excel</a>
             </div>
-      <div class="table-responsive shadow-sm rounded">
-
-        <table class="table table-hover">
-          <thead class="thead bg-primary">           
+      <div class="table-responsive shadow rounded">
+        <table class="table border border-warning table-striped">
+          <thead class="thead bg-warning">           
             <tr>
               <th scope="col">Action</th>
               <th scope="col">Employee ID</th>
@@ -64,13 +64,13 @@ $result=mysqli_query($db_conn,$query);
 
               <tr>
                 <td> 
-                    <a href="edit.php?employee_id=<?php echo $array[0];?>&action=edit_employee" class="btn btn-primary">Edit</a>
-                   
+                  <div class="btn-group">
+                      <a href="edit.php?employee_id=<?php echo $array[0];?>&action=edit_employee" class="btn m-1 btn-primary">Edit</a>                
 
                     <!-- Button trigger modal -->
-                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                      <a  class="btn m-1 btn-danger" data-toggle="modal" data-target="#exampleModal">
                        Delete
-                      </button>
+                      </a></div>
 
                       <!-- Modal -->
                       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -140,6 +140,7 @@ if($view_action == 'course')
 ?>
             
           <h2>Course details</h2>
+          <hr>
         </div> 
 
 <?php
@@ -150,10 +151,12 @@ $query="select * from Course limit 200"; // Fetch all the data from the table cu
 $result=mysqli_query($db_conn,$query);
  if ($result->num_rows > 0):;?>
 
-
-      <div class="table-responsive shadow-sm rounded">
-        <table class="table table-hover">
-          <thead class="thead bg-primary">
+            <div class="list-group">
+                <a href="export_excel.php?download=all_course" class="btn shadow btn-success">Export to Excel</a>
+            </div>
+      <div class="table-responsive shadow rounded">
+        <table class="table border border-warning table-striped">
+          <thead class="thead bg-warning">   
 
             <tr>
               
@@ -184,15 +187,16 @@ $result=mysqli_query($db_conn,$query);
 
               <tr>
                 <td> 
-                    <a href="edit.php?course_id=<?php echo $array[0];?>&action=edit_course" class="btn btn-primary">Edit</a>
+                  <div class="btn-group">
+                      <a href="edit.php?course_id=<?php echo $array[0];?>&action=edit_course" class="btn m-1 btn-primary">Edit</a>                
 
                     <!-- Button trigger modal -->
-                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                      <a  class="btn m-1 btn-danger" data-toggle="modal" data-target="#exampleModalC">
                        Delete
-                      </button>
+                      </a></div>
 
                       <!-- Modal -->
-                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal fade" id="exampleModalC" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header">
@@ -261,6 +265,7 @@ if($view_action == 'enrolled')
 ?>
             
           <h2>Enrolled details</h2>
+          <hr>
         </div> 
 
 <?php
@@ -272,9 +277,12 @@ $result=mysqli_query($db_conn,$query);
  if ($result->num_rows > 0):;?>
 
 
-      <div class="table-responsive shadow-sm rounded">
-        <table class="table table-hover">
-          <thead class="thead bg-primary">
+            <div class="list-group">
+                <a href="export_excel.php?download=all_enrolled" class="btn shadow btn-success">Export to Excel</a>
+            </div>
+      <div class="table-responsive shadow rounded">
+        <table class="table border border-warning table-striped">
+          <thead class="thead bg-warning">   
 
             <tr>
 

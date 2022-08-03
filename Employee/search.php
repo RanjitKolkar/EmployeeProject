@@ -46,16 +46,20 @@ if(isset($_POST['save']))
 <div class="container mt-2">
   <div class="jumbotron">
     <form action="" method="post" class="mb-3">
-      <div class="select-block">
-        <select class="form-select btn-light" name="emp_search">
+      <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Search Employee</label>
+          </div>
+        <select class="form-select btn-light custom-select" id="inputGroupSelect01" name="emp_search">
           <option value="" disabled selected>Search By</option>
           <option value="id">Employee Id</option>
           <option value="name">Employee Name</option>
           <option value="rank">Employee Rank</option>
         </select>
-      </div>
-      <br />
+        <div class="col-sm-2">
       <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+      </div>
+      </div>
       <hr>
     </form> <?php
 
@@ -86,16 +90,16 @@ if(isset($_POST['save']))
 
     <?php
 function displaySearch($value,$searchBy,$searchErr) {
-  echo "Enter Employee ".$value;?> 
+?> 
 
   <form class="form-horizontal" action="#" method="post">
-      <div class="form-group">
-        <div class="col-sm-6">
+          <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01"><?php echo "Enter Employee ".$value;?> </label>
+          </div>
           <input type="text" class="form-control" name="<?php echo $searchBy ?>" placeholder="Enter">
-        </div>
-        <br>
         <div class="col-sm-2">
-          <button type="submit" name="save" class="btn btn-outline-success">Search</button>
+          <button type="submit" name="save" class="btn btn-success">Search</button>
         </div>
         <span class="error" style="color:red;"> <?php echo $searchErr;?> </span>
       </div>
@@ -106,14 +110,14 @@ function displaySearch($value,$searchBy,$searchErr) {
 
 
     <hr>
-    <div class="table-responsive shadow-sm rounded"> <?php
+    <div class="table-responsive border border-warning shadow rounded"> <?php
                  if(!$employee_details)
                  {
                     echo '<tr>No data found</tr>';
                  }
                  else{?> 
-        <table class="table table-hover">
-        <thead class="thead bg-primary">
+        <table class="table table-striped">
+        <thead class="thead bg-warning">
           <tr>
             <th>Id</th>
             <th>Employee Name</th>
