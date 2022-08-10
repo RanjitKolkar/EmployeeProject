@@ -48,7 +48,7 @@ $result=mysqli_query($db_conn,$query);
             
            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal"><?php echo $language['Admin_Login']?></button>
 
-            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModalLanguageSelection"><?php echo $language['Close']?> </button>
+            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModalLanguageSelection"><?php echo $language['Chose_language']?> </button>
 
           </li>
 
