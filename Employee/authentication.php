@@ -1,10 +1,10 @@
 <?php
-   ob_start();
-   session_start();
+   // ob_start();
+   // session_start();
 
 include 'dbConn.php';
-$searchErr = '';
-$employee_details='';
+// $searchErr = '';
+// $employee_details='';
 $_SESSION['valid'] = "false";
 if(isset($_POST['submit_login']))
 {

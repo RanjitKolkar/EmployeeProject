@@ -5,26 +5,28 @@ if(isset($_GET['action'])){
   $view_action = $_GET['action']; 
 } 
 
-// -------------fetch  Employee Details for edit
+// -------------delete  Employee Details 
 if($view_action == 'delete_employee')
 {
    $employee_id=(int)$_GET['employee_id'];
+   echo $employee_id;
     $query = "DELETE FROM Enrolled WHERE employee_id='$employee_id' ";  
       $query1 = "DELETE FROM Employee WHERE employee_id='$employee_id' "; 
-   // Delete data from the table customers using id
+   
 
     mysqli_query($db_conn, $query)  ;
-    //First delete from Enrolled then from Employee
-   if (mysqli_query($db_conn, $query1)) {
-$msg=1;
+     $result=mysqli_query($db_conn, $query1);
+     $error_message = mysqli_error($db_conn);
 
- } else {
-    $msg=4;
- }
-   // header ("Location: adminhome.php?msg=".$msg."");
+    if($error_message == ""){
+        $msg= "No error related to SQL query.";
+    }else{
+        echo "Query Failed: ".$error_message;
+    }
+    mysqli_close($db_conn);
  }
 
- // -------------fetch  Employee Details for edit
+ // -------------delete Course Details
 if($view_action == 'delete_course')
 {
    $course_id=(int)$_GET['course_id'];
@@ -40,9 +42,11 @@ $msg=1;
  } else {
     $msg=4;
  }
-   // header ("Location: adminhome.php?msg=".$msg."");
+   
+header ("Location: view.php?view=course&msg=".$msg."");
  }
- // -------------fetch  Employee Details for edit
+
+ // -------------DeleteEnrollment
 if($view_action == 'withdraw_course')
 {
    $course_id=(int)$_GET['course_id'];
@@ -56,11 +60,7 @@ $msg=7;
     $msg=4;
  }
 
-}
-
 header ("Location: view.php?view=course&msg=".$msg."");
-
-
-
+}
 
 ?>

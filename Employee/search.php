@@ -25,8 +25,8 @@ if(isset($_POST['save']))
     }
         if(!empty($_POST['search_Rank']))
     {
-        $search_phone = $_POST['search_Rank'];
-        $stmt = $con->prepare("select * from Employee where rank like '%$search_Rank%'");
+        $search_rank = $_POST['search_Rank'];
+        $stmt = $con->prepare("select * from Employee where rank like '%$search_rank%'");
         $stmt->execute();
         $employee_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
         //print_r($employee_details);
@@ -110,18 +110,33 @@ function displaySearch($value,$searchBy,$searchErr) {
 
 
     <hr>
-    <div class="table-responsive border border-warning shadow rounded"> <?php
+    <div class="table-responsive shadow rounded"> <?php
                  if(!$employee_details)
                  {
                     echo '<tr>No data found</tr>';
                  }
                  else{?> 
-        <table class="table table-striped">
-        <thead class="thead bg-warning">
+      
+        <table class="table border border-warning table-striped">
+          <thead class="thead bg-warning">  
           <tr>
-            <th>Id</th>
-            <th>Employee Name</th>
-            <th>rank</th>
+              <th scope="col">Employee ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Email</th>
+
+              <th scope="col">rank</th>
+              <th scope="col">Nationality</th>
+              <th scope="col">sex</th>
+              <th scope="col">classification</th>
+
+              <th scope="col">general_management</th>
+              <th scope="col">sub_management</th>
+              <th scope="col">location_of_work</th>
+              <th scope="col">section</th>
+
+              <th scope="col">category</th>
+              <th scope="col">from_needs_list</th>
           </tr>
         </thead>
         <tbody> <?php
@@ -130,8 +145,22 @@ function displaySearch($value,$searchBy,$searchErr) {
                         ?> <tr>
             <td> <?php echo $value['employee_id'];?> </td>
             <td> <?php echo $value['name'];?> </td>
+            <td> <?php echo $value['phone'];?> </td>
+            <td> <?php echo $value['email'];?> </td>
+
             <td> <?php echo $value['rank'];?> </td>
-          </tr> <?php
+            <td> <?php echo $value['nationality'];?> </td>
+            <td> <?php echo $value['sex'];?> </td>
+            <td> <?php echo $value['classification'];?> </td>
+
+            <td> <?php echo $value['general_management'];?> </td>
+            <td> <?php echo $value['sub_management'];?> </td>
+            <td> <?php echo $value['location_of_work'];?> </td>
+            <td> <?php echo $value['section'];?> </td>
+            
+            <td> <?php echo $value['category'];?> </td>
+            <td> <?php echo $value['from_needs_list'];?> </td>
+            </tr> <?php
                     }
                      
                  }

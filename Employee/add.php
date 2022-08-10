@@ -19,7 +19,7 @@ $add_action = 'employee';
                 <hr>
             </div>
            
-            <form action="insert-process.php?insert=employee" method="post">
+            <form action="insert-process.php?insert=employee" id="validateNumber" method="post">
               
                 <div class="form-group row">
                     <div class="col input-group mb-3">
@@ -40,7 +40,7 @@ $add_action = 'employee';
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Phone</span>
                         </div>
-                    <input type="text"  name="phone" class="form-control" >
+                    <input type="number"  name="phone" class="form-control" >
                     </div>
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
@@ -125,6 +125,7 @@ $add_action = 'employee';
                      <input type="text"  name="from_needs_list" class="form-control" >            
                     </div>
                 </div>
+
                 <br>
                 <input type="submit" class="btn btn-primary shadow " name="submit" value="Create Employee">
             </form>
@@ -244,9 +245,22 @@ $add_action = 'employee';
                     </div> 
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Hours Instructor 1</span>
+                        </div>
+                     <input type="text" name="hours_instructor_1" class="form-control" ></div>                  
+                    </div>
+                                      <div class="form-group row">
+                    <div class="col input-group mb-3">
+                        <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Instructor 2</span>
                         </div>
-                     <input type="text" name="instructor_2" class="form-control" ></div>                  
+                    <input type="text" name="instructor_2" class="form-control" >
+                    </div> 
+                    <div class="col input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Hours Instructor 2</span>
+                        </div>
+                     <input type="text" name="hours_instructor_2" class="form-control" ></div>                  
                     </div>
               
                   <div class="form-group row">
@@ -275,4 +289,25 @@ $add_action = 'employee';
      </div>        
     </div>
 </div>
+<script type="text/javascript">
+    
+$(document).ready(function(){
 
+    $('#validateNumber').bootstrapValidator({
+        feedbackIcons:{
+            valid:'glyphicon glyphicon-ok',
+            invalid:'glyphicon glyphicon-remove',
+            validating:'glyphicon glyphicon-refresh',
+        },
+        fields:{
+            phone:{
+                integer:{
+                    message:'The value is not Number'
+                }
+            }
+        }
+
+    });
+});
+
+</script>

@@ -17,7 +17,7 @@ if(isset($_POST['save']))
     {
 
         $search_name = $_POST['search_Name'];
-        $stmt = $con->prepare("select * from Employee where name like '$name'");
+        $stmt = $con->prepare("select * from Employee where name like '$search_name'");
         $stmt->execute();
         $employee_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
         // print_r($employee_details);
@@ -25,8 +25,8 @@ if(isset($_POST['save']))
     }
         if(!empty($_POST['search_Rank']))
     {
-        $search_phone = $_POST['search_Rank'];
-        $stmt = $con->prepare("select * from Employee where rank like '$rank'");
+        $search_rank = $_POST['search_Rank'];
+        $stmt = $con->prepare("select * from Employee where rank like '$search_rank'");
         $stmt->execute();
         $employee_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
         //print_r($employee_details);
@@ -176,6 +176,8 @@ endif;
 
                         <!-- IF NOT Enrolled -->
                     <a href="enroll-process.php?employee_id=<?php echo $value['employee_id'];?>&employee_name=<?php echo $value['name'];?>" class="btn btn-primary">Enroll</a>
+
+                    <a class="btn btn-secondary">Update results</a>
 <?php }?>
                     
                 </td>

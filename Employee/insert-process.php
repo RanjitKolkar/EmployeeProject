@@ -58,17 +58,21 @@ if($add_action == 'course'){
 
      $contract_location = $_POST['contract_location'];
      $instructor_1 = $_POST['instructor_1'];
+     $hours_instructor_1 = $_POST['hours_instructor_1'];
      $instructor_2 = $_POST['instructor_2'];
+     $hours_instructor_2 = $_POST['hours_instructor_2'];
      
-     $query = "INSERT INTO Course(course_id, course_name, start_date, end_date, quarter, month, year, course_specialization, course_plan, no_of_days, hours_per_day, total_hours, contract_location, instructor_1, instructor_2) VALUES ( '$course_id','$course_name', '$start_date', '$end_date', '$quarter', '$month', '$year', '$course_specialization', '$course_plan', '$no_of_days', '$hours_per_day', '$total_hours', '$contract_location', '$instructor_1', '$instructor_2')";
- 
-     if (mysqli_query($db_conn, $query)) {
-        $msg = 1;
+     $query = "INSERT INTO Course(course_id, course_name, start_date, end_date, quarter, month, year, course_specialization, course_plan, no_of_days, hours_per_day, total_hours, contract_location, instructor_1, hours_instructor_1, instructor_2,hours_instructor_2) VALUES ( '$course_id','$course_name', '$start_date', '$end_date', '$quarter', '$month', '$year', '$course_specialization', '$course_plan', '$no_of_days', '$hours_per_day', '$total_hours', '$contract_location', '$instructor_1', '$hours_instructor_1','$instructor_2','$hours_instructor_2')";
+     
+     $result=mysqli_query($db_conn, $query);
+    $error_message = mysqli_error($db_conn);
+    if($error_message == ""){
+        echo "Query Success: ".$error_message;
      } else {
-        $msg = 4;
+        echo "Query Failed: ".$error_message;
      }
 
-  header ("Location: add.php?add=course&msg=".$msg."");
+  // header ("Location: add.php?add=course&msg=".$msg."");
 }
 // --------- End Insert Course into DB
 

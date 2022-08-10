@@ -26,23 +26,18 @@ if(isset($_GET['employee_name'])){
 $query="select course_id, course_name from Course limit 200"; // Fetch all the data from the table customers
 
 $result=mysqli_query($db_conn,$query);
- if ($result->num_rows > 0):;?>
+if ($result->num_rows > 0):;?>     
     <form action="" method="post" class="mb-3">
-
-            <h3> Select Course for Employee <?php echo $employee_name;?> to enroll</h3>
-      <div class="select-block">
+        <h3> Select Course for Employee <?php echo $employee_name;?> to enroll</h3>
+        <div class="select-block">
         <select class="form-select btn-light" name="select_course">
           <option value="" disabled selected>Select Course</option>
-            <?php while($array=mysqli_fetch_row($result)):?>
-                
-                      <option value=<?php echo $employee_id.",".$array[0];?>><?php echo $array[0].':'.$array[1];?></option>
 
-            <?php endwhile; ?>
-            <?php else: ?>
-        <h1>No Data Found</h1>
-        <?php 
-        mysqli_free_result($result); 
-        endif;?>
+    <?php while($array=mysqli_fetch_row($result)):?>        
+          <option value=<?php echo $employee_id.",".$array[0];?>><?php echo $array[0].':'.$array[1];?>
+          </option>
+    <?php endwhile; ?>
+
         </select>
       </div>
       <br />
@@ -51,35 +46,45 @@ $result=mysqli_query($db_conn,$query);
     </form>
     <?php
 
-      if(isset($_POST['submit'])){
+    if(isset($_POST['submit'])){
         if(!empty($_POST['select_course'])) {
-           $selected_course_id = $_POST['select_course'];
-              // echo $selected_course_id;
-        } } else {
-          echo 'Please select the course.';
-        }
+            $selected_course_id = $_POST['select_course'];
+          // echo $selected_course_id;
+        } 
+    } else {
+      echo 'Please select the course.';
+    }
       
     ?> 
 
 
 
-   <?php 
+    <?php 
 
-$str_arr = preg_split ("/\,/", $selected_course_id); 
-$employee_id= (int)$str_arr[0];
-$course_id= (int)$str_arr[1];
+    $str_arr = preg_split ("/\,/", $selected_course_id); 
+    $employee_id= (int)$str_arr[0];
+    $course_id= (int)$str_arr[1];
 
-   $query = "INSERT INTO Enrolled (course_id, employee_id, course_name )
-     VALUES ($course_id,$employee_id,'test')";
- 
-     if (mysqli_query($db_conn, $query)) {
-        echo "Successfully enrolled to the course".mysqli_query($db_conn, $query);
-     } else {
-        echo "You have already enrolled to the course".mysqli_query($db_conn, $query);
-     }
+    $query = "INSERT INTO Enrolled (course_id, employee_id, course_name )
+    VALUES ($course_id,$employee_id,'test')";
 
- ?>
-<!-- end of coulmn, row, jumbotron container -->
+    if (mysqli_query($db_conn, $query)) {
+        echo "Successfully enrolled to the course";
+        ?> <a href="view.php?view=enrolled" class="btn btn-outline-primary">View Enrolled</a><?php
+    } else {
+        echo "You have already enrolled to the course";
+       ?>  <a href="view.php?view=enrolled" class="btn btn-outline-primary">View Enrolled </a><?php
+    }
+
+    ?>
+
+<?php else: ?>
+    <h3>No Course yet. Create Course first</h3>
+                  <a href="add.php?add=course" class="btn btn-primary">Create Course</a>
+    <?php 
+    mysqli_free_result($result); 
+endif;?>
+       <!-- end of coulmn, row, jumbotron container -->
         </div> 
      </div>        
     </div>

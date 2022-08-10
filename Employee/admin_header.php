@@ -1,9 +1,23 @@
 <?php
 session_start();
 
+include 'dbConn.php';
+$language_set='arabic';
+$query="select language_set from language";
+$result=mysqli_query($db_conn,$query);
+ if ($result->num_rows > 0):;?>
+
+    <?php while($array=mysqli_fetch_row($result)):       
+           $language_set=$array[0]; 
+     endwhile; 
+     endif;
+
+     if($language_set=='english')
+     require_once("language.php");else require_once("language_arabic.php");
+
 ?>
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Employee</title>
@@ -14,19 +28,19 @@ session_start();
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
    <body style="">
-    <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="adminhome.php">Employee</a>
+       <div class="container">
+      <nav class="navbar navbar-expand-lg bg-white text-white shadow-sm rounded">
+        <a class="navbar-brand" href="adminhome.php"><?php echo $language['Title'];?></a>
 
           <ul class="navbar-nav  mr-auto">
             <li class="nav-item">
-              <a class="btn btn-primary" href="logout.php">Logout to Home</a>
+              <a class="btn btn-primary" href="logout.php"><?php echo $language['Logout_to_Home'];?></a>
             </li>   
    
           </ul>
 
             <li class="nav-item" style=" list-style-type: none;">
-<button type="button" class="btn shadow btn-success" data-placement="bottom" title="logout" data-toggle="modal" data-target="#logoutModal">Welcome, <?php  echo $_SESSION['username']?> </button>
+<button type="button" class="btn shadow btn-success" data-placement="bottom" title="logout" data-toggle="modal" data-target="#logoutModal"><?php echo $language['Welcome'];?> </button>
 
 
           </li>
@@ -36,33 +50,6 @@ session_start();
     </div>
     <!-- /container -->
 
-      <div id="myModal" class="modal fade">
-        <form class="modal-dialog modal-sm" action="authentication.php" method="post">
-          <div class="modal-content">
-              <!-- Modal Header -->
-              <div class="modal-header">
-                <h4 class="modal-title">Enter Login Details</h4>
-               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
-
-                <!-- Modal body -->
-            <div class="modal-body">
-              <div class="form-group">
-                <label >User Name</label>
-                <input type="text" class="form-control" name="user" placeholder="Enter name" required>
-              </div>
-                            <div class="form-group">
-                <label >Password</label>
-                <input type="password" class="form-control" name="pass" placeholder="Enter Password" required>
-              </div>
-          
-              
-              <button class="btn btn-primary shadow" type="submit" name="submit_login">Login</button>
-               <button type="button" class="btn btn-danger shadow" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-            
-          </div>
 
 
         </form>
