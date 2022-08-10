@@ -16,7 +16,7 @@ if(isset($_GET['msg'])){
     }
   else{
             $msg=$_GET['msg'];
-            if($msg==1 or $msg==2 or $msg==3 or $msg==5 or $msg==7  ){
+            if($msg==1 or $msg==2 or $msg==3 or $msg==5 or $msg==7  or $msg==11  ){
                 $msg_color='bg-success text-white';
             }
             elseif ($msg==4 or $msg==6 or $msg==8 ) {

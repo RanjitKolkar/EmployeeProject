@@ -21,7 +21,7 @@ $result=mysqli_query($db_conn,$query);
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 
-    <title  dir="rtl" lang="AR"><?php echo $language['Page_Title']?></title> 
+    <title  dir="rtl" lang="AR"><?php echo $language['Page Title']?></title> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -33,7 +33,7 @@ $result=mysqli_query($db_conn,$query);
 
     <div class="container">
       <nav class="navbar navbar-expand-lg bg-white text-white shadow-sm rounded">
-        <a class="navbar-brand" href="index.php"><?php echo $language['Page_Title']?></a>
+        <a class="navbar-brand" href="index.php"><?php echo $language['Page Title']?></a>
 
           <ul class="navbar-nav  mr-auto">
             <li class="nav-item">

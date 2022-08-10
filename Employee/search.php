@@ -1,5 +1,5 @@
 <?php
-include 'dbConn.php';
+include 'dbConn.php'; include('header.php');
 $searchErr = '';
 $employee_details='';
 if(isset($_POST['save']))
@@ -41,23 +41,23 @@ if(isset($_POST['save']))
  
 ?> 
 
-<?php include('header.php') ?> 
+
 
 <div class="container mt-2">
   <div class="jumbotron">
     <form action="" method="post" class="mb-3">
       <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Search Employee</label>
+            <label class="input-group-text" for="inputGroupSelect01"><?php echo $language['Search_Employee']?></label>
           </div>
         <select class="form-select btn-light custom-select" id="inputGroupSelect01" name="emp_search">
-          <option value="" disabled selected>Search By</option>
-          <option value="id">Employee Id</option>
-          <option value="name">Employee Name</option>
-          <option value="rank">Employee Rank</option>
+          <option value="" disabled selected><?php echo $language['Search_by']?></option>
+          <option value="id"><?php echo $language['Employee ID']?></option>
+          <option value="name"><?php echo $language['Name']?></option>
+          <option value="rank"><?php echo $language['Rank']?></option>
         </select>
         <div class="col-sm-2">
-      <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+      <input class="btn btn-primary" type="submit" name="submit" value="<?php echo $language['Submit']?>">
       </div>
       </div>
       <hr>
@@ -69,13 +69,13 @@ if(isset($_POST['save']))
 
               switch ($selected) {
                 case "id":
-                        displaySearch($selected,"search_ID",$searchErr);
+                        displaySearch($selected,"search_ID",$searchErr, $language['Enter_Employee'],$language['Search']);
                 break;
                 case "name":
-                    displaySearch($selected,"search_Name",$searchErr);
+                    displaySearch($selected,"search_Name",$searchErr, $language['Enter_Employee'],$language['Search']);
                 break;
                 case "rank":
-                    displaySearch($selected,"search_Rank",$searchErr);
+                    displaySearch($selected,"search_Rank",$searchErr, $language['Enter_Employee'],$language['Search']);
                 break;
               
     } 
@@ -89,17 +89,19 @@ if(isset($_POST['save']))
 
 
     <?php
-function displaySearch($value,$searchBy,$searchErr) {
+
+   
+function displaySearch($value,$searchBy,$searchErr,$enterEmployeeText,$searchtext) {
 ?> 
 
   <form class="form-horizontal" action="#" method="post">
           <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01"><?php echo "Enter Employee ".$value;?> </label>
+            <label class="input-group-text" for="inputGroupSelect01"><?php echo "".$enterEmployeeText.$value;?> </label>
           </div>
           <input type="text" class="form-control" name="<?php echo $searchBy ?>" placeholder="Enter">
         <div class="col-sm-2">
-          <button type="submit" name="save" class="btn btn-success">Search</button>
+          <button type="submit" name="save" class="btn btn-success"><?php echo $searchtext;?></button>
         </div>
         <span class="error" style="color:red;"> <?php echo $searchErr;?> </span>
       </div>
@@ -113,30 +115,30 @@ function displaySearch($value,$searchBy,$searchErr) {
     <div class="table-responsive shadow rounded"> <?php
                  if(!$employee_details)
                  {
-                    echo '<tr>No data found</tr>';
+                    echo '<tr>'.$language['No_data_found'].'</tr>';
                  }
                  else{?> 
       
         <table class="table border border-warning table-striped">
           <thead class="thead bg-warning">  
           <tr>
-              <th scope="col">Employee ID</th>
-              <th scope="col">Name</th>
-              <th scope="col">Phone</th>
-              <th scope="col">Email</th>
+              <th scope="col"><?php echo $language['Employee ID']?></th>
+              <th scope="col"><?php echo $language['Name']?></th>
+              <th scope="col"><?php echo $language['Phone']?></th>
+              <th scope="col"><?php echo $language['Email']?></th>
 
-              <th scope="col">rank</th>
-              <th scope="col">Nationality</th>
-              <th scope="col">sex</th>
-              <th scope="col">classification</th>
+              <th scope="col"><?php echo $language['Rank']?></th>
+              <th scope="col"><?php echo $language['Nationality']?></th>
+              <th scope="col"><?php echo $language['Sex']?></th>
+              <th scope="col"><?php echo $language['Classification']?></th>
 
-              <th scope="col">general_management</th>
-              <th scope="col">sub_management</th>
-              <th scope="col">location_of_work</th>
-              <th scope="col">section</th>
+              <th scope="col"><?php echo $language['General Management']?> </th>
+              <th scope="col"><?php echo $language['Sub Management']?> </th>
+              <th scope="col"><?php echo $language['Location of the work']?></th>
+              <th scope="col"><?php echo $language['Section']?></th>
 
-              <th scope="col">category</th>
-              <th scope="col">from_needs_list</th>
+              <th scope="col"><?php echo $language['Category']?></th>
+              <th scope="col"><?php echo $language['Needs List']?> </th>
           </tr>
         </thead>
         <tbody> <?php
@@ -156,8 +158,7 @@ function displaySearch($value,$searchBy,$searchErr) {
             <td> <?php echo $value['general_management'];?> </td>
             <td> <?php echo $value['sub_management'];?> </td>
             <td> <?php echo $value['location_of_work'];?> </td>
-            <td> <?php echo $value['section'];?> </td>
-            
+            <td> <?php echo $value['section'];?> </td>            
             <td> <?php echo $value['category'];?> </td>
             <td> <?php echo $value['from_needs_list'];?> </td>
             </tr> <?php

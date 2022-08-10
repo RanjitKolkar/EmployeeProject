@@ -11,11 +11,12 @@ $errors = array (
     8 => "Record Has Been Successfully Enrolled",
     9 => "Welcome Employee",
     10 => "You have not enrolled to the course yet. Please Enroll to the course first",
+    11 => "language Changed Successfully",
 );
 
 $error_id = isset($_GET['msg']) ? (int)$_GET['msg'] : 0;
 
-if ($error_id != 0 && in_array($error_id, [1,2,3,4,5,6,7,8,9,10])) {
+if ($error_id != 0 && in_array($error_id, [1,2,3,4,5,6,7,8,9,10,11])) {
     echo $errors[$error_id];
 }else{
     header ("Location: toasts.php?msg=".$msg."");

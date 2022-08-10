@@ -12,9 +12,9 @@ function createTableWithFirstRowasheader(){
 $query = "CREATE TABLE IF NOT EXISTS $table_name ( id varchar(100),name varchar(100));";
  
      if (mysqli_query($db_conn, $query)) {
-        echo "Successfully created".mysqli_query($db_conn, $query);
+        echo "Successfully created";
      } else {
-        echo "failed".mysqli_query($db_conn, $query);
+        echo "Table Already Exist";
      }
 
 }
@@ -41,10 +41,7 @@ if(isset($_POST['Submit'])){
     /* For Loop for all sheets */
 
     for($i=0;$i<$totalSheet;$i++){
-
-
      	$Reader->ChangeSheet($i);
-
 		$first_row=1;
 		$alreadyInserted=0;
 

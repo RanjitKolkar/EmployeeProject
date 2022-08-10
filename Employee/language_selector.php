@@ -12,7 +12,7 @@ if(isset($_POST['submit_language']))
 
         $result=mysqli_query($db_conn,$query);
     }
-    $msg=7;
+    $msg=11;
      header("location: index.php?msg=".$msg."");
  }
 ?>
