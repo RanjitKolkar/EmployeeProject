@@ -67,12 +67,14 @@ if($add_action == 'course'){
      $result=mysqli_query($db_conn, $query);
     $error_message = mysqli_error($db_conn);
     if($error_message == ""){
-        echo "Query Success: ".$error_message;
+        // echo "Query Success: ".$error_message;
+      $msg=1;
      } else {
-        echo "Query Failed: ".$error_message;
+        // echo "Query Failed: ".$error_message;
+      $msg=4;
      }
 
-  // header ("Location: add.php?add=course&msg=".$msg."");
+  header ("Location: add.php?add=course&msg=".$msg."");
 }
 // --------- End Insert Course into DB
 

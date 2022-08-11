@@ -33,9 +33,13 @@ $language['Submit']="Submit";
 $language['Action']='Action';
 $language['Edit']='Edit';
 $language['Delete']='Delete';
+$language['Cancel']='Cancel';
 
 $language['Enter_Employee']="Enter Employee ";
 $language['Please_Select_value']="Please select the value.";
+$language['Update_Employee_Data']="Update Employee Data";
+$language['Update_Course_Data']="Update Course Data";
+$language['Update_Results_Data']="Update Results Data";
 
 // admin header
 $language['Hi Admin, welcome!!!']='Hi Admin, welcome!!!';
@@ -111,28 +115,27 @@ $language['Instructor 2']='Instructor 2';
 $language['Hours Instructor 2']='Hours Instructor 2';
 $language['contract_location']='Contract location';
 
+
 //Enroll
 
 
-$language ['course_id']='course id';
-$language ['employee_id']='employee id';
-$language ['course Name']='Course Name';
 
-$language ['exam_result']='exam result';
-$language ['pass_or_fail']='pass or_fail';
-$language ['fail_reason']='fail reason';
-$language ['notes']='notes';
-$language ['date_of_resit']='date ofresit';
+$language ['exam_result']='Exam Result';
+$language ['pass_or_fail']='Pass or fail';
+$language ['fail_reason']='Fail reason';
+$language ['notes']='Notes';
+$language ['date_of_resit']='Date of resit';
 
-$language ['resit_result']='resit result';
-$language ['pass_fail_resit']='pass fail resit';
+$language ['resit_result']='Resit result';
+$language ['pass_fail_resit']='Pass fail resit';
 
 
-$language ['instructor_grade']='instructor grade';
-$language ['course_grade']='course grade';              
-$language ['instructor_self_grade']='instructor self grade';
-$language ['direct_manager_grade']='direct manager grade';              
-$language ['work_test']='work test';
+$language ['instructor_grade']='Instructor grade';
+$language ['course_grade']='Course grade';              
+$language ['instructor_self_grade']='Instructor self grade';
+$language ['direct_manager_grade']='Direct manager grade';              
+$language ['work_test']='Work test';
+
 
 
 

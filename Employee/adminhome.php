@@ -5,8 +5,8 @@
             <?php include('toasts.php')?>
         <div class="jumbotron ">
             <h3><?php echo $language['Hi Admin, welcome!!!']?></h3>
-           <div class="list-group border border-warning">
-                <a class="list-group-item list-group-item-action bg-warning"><i class="material-icons" color:white>add</i>  <?php echo $language['Create and Update'];?></a>
+           <div class="list-group border" style="border-color: #e3f2fd;">
+                <a class="list-group-item list-group-item-action " style="background-color: #e3f2fd;"><i class="material-icons" >add</i>  <?php echo $language['Create and Update'];?></a>
               <a href="add.php?add=employee" class="list-group-item list-group-item-action"><?php echo $language['Create Employee'];?></a>
               <a href="add.php?add=course" class="list-group-item list-group-item-action"><?php echo $language['Create Course'];?></a>
               <a href="enroll.php" class="list-group-item list-group-item-action"><?php echo $language['Enroll Employee'];?></a>
@@ -16,16 +16,15 @@
 
 
             <hr>
-            <div class="list-group border border-warning">
-                <a class="list-group-item list-group-item-action bg-warning"><i class="material-icons" color:white>drafts</i><?php echo $language['View'];?> </a>
+            <div class="list-group border" style="border-color: #e3f2fd;">
+                <a class="list-group-item list-group-item-action " style="background-color: #e3f2fd;"><i class="material-icons" color:white>drafts</i><?php echo $language['View'];?> </a>
                 <a href="view.php?view=employee" class="list-group-item list-group-item-action"><?php echo $language['View all employee details'];?></a>
                 <a href="view.php?view=course" class="list-group-item list-group-item-action"><?php echo $language['View all course'];?></a>
                 <a href="view.php?view=enrolled" class="list-group-item list-group-item-action"><?php echo $language['View employee enrolled to course'];?></a>
             </div>
                        <hr>
-            <div class="list-group border border-warning">
-
-                <a class="list-group-item list-group-item-action bg-warning"> <i class="material-icons">file_download</i> <?php echo $language['Download'];?> </a>
+            <div class="list-group border" style="border-color: #e3f2fd;">
+                <a class="list-group-item list-group-item-action " style="background-color: #e3f2fd;">file_download</i> <?php echo $language['Download'];?> </a>
                 <a href="export_excel.php?download=all_employee" class="list-group-item list-group-item-action"><?php echo $language['Download All Employee'];?></a>
                 <a href="export_excel.php?download=all_course" class="list-group-item list-group-item-action"><?php echo $language['Download All Course'];?></a>
                 <a href="export_excel.php?download=all_enrolled" class="list-group-item list-group-item-action"><?php echo $language['Download All Enrolled'];?></a>
@@ -33,9 +32,8 @@
              
             </div>
             <hr>
-            <div class="list-group border border-warning">
-
-                <a class="list-group-item list-group-item-action bg-warning"> <i class="material-icons">file_upload</i> <?php echo $language['Import Excel Sheet to Database'];?> </a>
+            <div class="list-group border" style="border-color: #e3f2fd;">
+                <a class="list-group-item list-group-item-action " style="background-color: #e3f2fd;">file_upload</i> <?php echo $language['Import Excel Sheet to Database'];?> </a>
 
                 <a class="list-group-item list-group-item-action">  
                 <form method="POST" action="excelUpload.php" enctype="multipart/form-data">

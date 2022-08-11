@@ -40,8 +40,8 @@ $result=mysqli_query($db_conn,$query);
                 <a href="export_excel.php?download=all_employee" class="btn shadow btn-success"><?php echo $language['ExporttoExcel'];?></a>
             </div>
       <div class="table-responsive shadow rounded">
-        <table class="table border border-warning table-striped">
-          <thead class="thead bg-warning">           
+        <table class="table border border-primary table-striped">
+          <thead class="thead bg-primary">           
             <tr>
               <th scope="col"><?php echo $language['Action']?></th>
               <th scope="col"><?php echo $language['Employee ID']?></th>
@@ -142,8 +142,8 @@ $result=mysqli_query($db_conn,$query);
                 <a href="export_excel.php?download=all_course" class="btn shadow btn-success">Export to Excel</a>
             </div>
       <div class="table-responsive shadow rounded">
-        <table class="table border border-warning table-striped">
-          <thead class="thead bg-warning">   
+        <table class="table border border-primary table-striped">
+          <thead class="thead bg-primary" style="background-color: #e3f2fd;">   
 
             <tr>
               
@@ -252,8 +252,8 @@ $result=mysqli_query($db_conn,$query);
                 <a href="export_excel.php?download=all_enrolled" class="btn shadow btn-success">Export to Excel</a>
             </div>
       <div class="table-responsive shadow rounded">
-        <table class="table border border-warning table-striped">
-          <thead class="thead bg-warning">   
+        <table class="table border border-primary table-striped">
+          <thead class="thead bg-primary">   
 
             <tr>
 
@@ -351,8 +351,8 @@ $result=mysqli_query($db_conn,$query);
                 <a href="export_excel.php?download=all_employee" class="btn shadow btn-success"><?php echo $language ['ExporttoExcel'];?></a>
             </div>
       <div class="table-responsive shadow rounded">
-        <table class="table border border-warning table-striped">
-          <thead class="thead bg-warning">           
+        <table class="table border border-primary table-striped">
+          <thead class="thead bg-primary">           
             <tr>
               <th scope="col"><?php echo $language['Employee ID']?></th>
               <th scope="col"><?php echo $language['Name']?></th>

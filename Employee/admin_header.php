@@ -17,7 +17,7 @@ $result=mysqli_query($db_conn,$query);
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
   <head>
     <meta charset="UTF-8">
     <title>Employee</title>
@@ -27,7 +27,7 @@ $result=mysqli_query($db_conn,$query);
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
-   <body style="">
+     <body class="bg-primary">
        <div class="container">
       <nav class="navbar navbar-expand-lg bg-white text-white shadow-sm rounded">
         <a class="navbar-brand" href="adminhome.php"><?php echo $language['Title'];?></a>

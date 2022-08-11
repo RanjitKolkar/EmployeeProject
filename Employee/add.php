@@ -24,13 +24,13 @@ $add_action = 'employee';
                 <div class="form-group row">
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Employee ID'];?>'];?></span>
+                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Employee ID'];?></span>
                         </div>
                     <input type="text"  name="employee_id" class="form-control" required="">
                     </div>
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Name'];?>'];?></span>
+                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Name'];?></span>
                         </div>
                      <input type="text"  name="name" class="form-control" required="">                 
                     </div>
@@ -38,13 +38,13 @@ $add_action = 'employee';
                 <div class="form-group row">
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Phone'];?>'];?></span>
+                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Phone'];?></span>
                         </div>
                     <input type="number"  name="phone" class="form-control" >
                     </div>
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Email'];?>'];?></span>
+                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Email'];?></span>
                         </div>
                      <input type="text"  name="email" class="form-control" >                 
                     </div>
@@ -53,13 +53,13 @@ $add_action = 'employee';
                 <div class="form-group row">
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Nationality'];?>'];?></span>
+                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Nationality'];?></span>
                         </div>
                     <input type="text"  name="nationality" class="form-control" >
                     </div>
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Gender'];?>'];?></span>
+                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Gender'];?></span>
                         </div>
                      <input type="text"  name="sex" class="form-control" >                 
                     </div>
@@ -68,13 +68,13 @@ $add_action = 'employee';
                 <div class="form-group row">
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Rank'];?>'];?></span>
+                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Rank'];?></span>
                         </div>
                     <input type="text"  name="rank" class="form-control" >
                     </div>         
                                <div class="col input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Classification'];?>'];?></span>
+                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Classification'];?></span>
                         </div>
                     <input type="text"  name="classification" class="form-control" >
                     </div>
@@ -84,13 +84,13 @@ $add_action = 'employee';
 
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><?php echo $language['General Management'];?>'];?></span>
+                            <span class="input-group-text" id="basic-addon1"><?php echo $language['General Management'];?></span>
                         </div>
                      <input type="text"  name="general_management" class="form-control" >         
                     </div>
                                         <div class="col input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Sub Management'];?>'];?></span>
+                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Sub Management'];?></span>
                         </div>
                      <input type="text"  name="sub_management" class="form-control" >
                     </div>
@@ -99,13 +99,13 @@ $add_action = 'employee';
                 <div class="form-group row">
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Section'];?>'];?></span>
+                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Section'];?></span>
                         </div>
                     <input type="text"  name="section" class="form-control" >
                     </div>
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Category'];?>'];?></span>
+                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Category'];?></span>
                         </div>
                      <input type="text"  name="category" class="form-control" >                 
                     </div>
@@ -114,13 +114,13 @@ $add_action = 'employee';
                  <div class="form-group row">
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Location of the work'];?>'];?></span>
+                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Location of the work'];?></span>
                         </div>
                     <input type="text"  name="location_of_work" class="form-control" >
                     </div>
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Needs List'];?>'];?></span>
+                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Needs List'];?></span>
                         </div>
                      <input type="text"  name="from_needs_list" class="form-control" >            
                     </div>
@@ -164,13 +164,13 @@ $add_action = 'employee';
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><?php echo $language['Start Date'];?></span>
                         </div>
-                    <input type="date" name="start_date" class="form-control" >
+                    <input type="date" name="start_date" class="form-control" required="">
                     </div>
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><?php echo $language['End Date'];?></span>
                         </div>
-                     <input type="date" name="end_date" class="form-control" >                   
+                     <input type="date" name="end_date" class="form-control" required="">                   
                     </div>
                 </div>
 
@@ -179,7 +179,14 @@ $add_action = 'employee';
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><?php echo $language['Quarter'];?></span>
                         </div>
-                    <input type="text" name="quarter" class="form-control" >
+                    <!-- <input type="text" name="quarter" class="form-control" > -->
+                      <select class="form-select btn-light custom-select" id="inputGroupSelect01" name="quarter">
+                          
+                          <option value="Quarter 1">Quarter 1</option>
+                          <option value="Quarter 2">Quarter 2</option>
+                          <option value="Quarter 3">Quarter 3</option>
+                          <option value="Quarter 4">Quarter 4</option>
+                        </select>
                     </div>
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">

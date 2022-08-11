@@ -1,7 +1,5 @@
 <?php
 session_start();
-
-
 include 'dbConn.php';
 $language_set='arabic';
 $query="select language_set from language";
@@ -33,7 +31,10 @@ $result=mysqli_query($db_conn,$query);
 
     <div class="container">
       <nav class="navbar navbar-expand-lg bg-white text-white shadow-sm rounded">
-        <a class="navbar-brand" href="index.php"><?php echo $language['Page Title']?></a>
+        <a class="navbar-brand" href="index.php">
+          <img src="logo.jpeg" alt="logo" width="60" height="60">
+        <!-- <?php echo $language['Page Title']?> -->
+      </a>
 
           <ul class="navbar-nav  mr-auto">
             <li class="nav-item">
