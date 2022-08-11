@@ -258,9 +258,9 @@ $result=mysqli_query($db_conn,$query);
             <tr>
 
               <th scope="col"><?php echo $language['Action'];?></th>
-              <th scope="col"><?php echo $language['course_id'];?></th>
-              <th scope="col"><?php echo $language['employee_id'];?></th>
-              <th scope="col"><?php echo $language['course Name'];?></th>
+              <th scope="col"><?php echo $language['Course ID'];?></th>
+              <th scope="col"><?php echo $language['Employee ID'];?></th>
+              <th scope="col"><?php echo $language['Name'];?></th>
 
               <th scope="col"><?php echo $language['exam_result'];?></th>
               <th scope="col"><?php echo $language['pass_or_fail'];?></th>

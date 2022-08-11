@@ -26,7 +26,7 @@ $add_action = 'employee';
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><?php echo $language['Employee ID'];?></span>
                         </div>
-                    <input type="text"  name="employee_id" class="form-control" required="">
+                    <input type="text"  placeholder="only numbers" name="employee_id" class="form-control" required="">
                     </div>
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
@@ -150,7 +150,7 @@ $add_action = 'employee';
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><?php echo $language['Course ID'];?></span>
                         </div>
-                    <input type="text" name="course_id" class="form-control" required="">
+                    <input type="text" placeholder="only numbers" name="course_id" class="form-control" required="">
                     </div>
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">

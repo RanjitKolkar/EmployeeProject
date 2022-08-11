@@ -24,7 +24,7 @@
             </div>
                        <hr>
             <div class="list-group border" style="border-color: #e3f2fd;">
-                <a class="list-group-item list-group-item-action " style="background-color: #e3f2fd;">file_download</i> <?php echo $language['Download'];?> </a>
+                <a class="list-group-item list-group-item-action " style="background-color: #e3f2fd;"><i class="material-icons" color:white>file_download</i> <?php echo $language['Download'];?> </a>
                 <a href="export_excel.php?download=all_employee" class="list-group-item list-group-item-action"><?php echo $language['Download All Employee'];?></a>
                 <a href="export_excel.php?download=all_course" class="list-group-item list-group-item-action"><?php echo $language['Download All Course'];?></a>
                 <a href="export_excel.php?download=all_enrolled" class="list-group-item list-group-item-action"><?php echo $language['Download All Enrolled'];?></a>
@@ -33,7 +33,7 @@
             </div>
             <hr>
             <div class="list-group border" style="border-color: #e3f2fd;">
-                <a class="list-group-item list-group-item-action " style="background-color: #e3f2fd;">file_upload</i> <?php echo $language['Import Excel Sheet to Database'];?> </a>
+                <a class="list-group-item list-group-item-action " style="background-color: #e3f2fd;"><i class="material-icons" color:white>file_upload</i> <?php echo $language['Import Excel Sheet to Database'];?> </a>
 
                 <a class="list-group-item list-group-item-action">  
                 <form method="POST" action="excelUpload.php" enctype="multipart/form-data">

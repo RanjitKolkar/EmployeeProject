@@ -142,7 +142,7 @@ $language['insert_success']="Record Has Been Successfully Inserted";
 $language['update_success']="Record Has Been Successfully Updated";
 $language['delete_success']="Record Has Been Successfully Deleted";
 
-$language['db_error']="MySQL Database Error. Please Check your query";
+$language['db_error']="MySQL Database Error. Please fill the all the fields properly";
 
 $language['login_success']="Successfully Logged In";
 $language['un_pass_wrong']="Username and Passwords are not correct";

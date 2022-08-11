@@ -117,38 +117,6 @@ $language ['contract_location'] = 'موقع العقد ';
 
 
 
-$language ['exam_result']='Exam Result';
-$language ['pass_or_fail']='Pass or fail';
-$language ['fail_reason']='Fail reason';
-$language ['notes']='Notes';
-$language ['date_of_resit']='Date of resit';
-
-$language ['resit_result']='Resit result';
-$language ['pass_fail_resit']='Pass fail resit';
-
-
-$language ['instructor_grade']='Instructor grade';
-$language ['course_grade']='Course grade';              
-$language ['instructor_self_grade']='Instructor self grade';
-$language ['direct_manager_grade']='Direct manager grade';              
-$language ['work_test']='Work test';
-
-// Messages
-$language['insert_success']="Record Has Been Successfully Inserted";
-$language['update_success']="Record Has Been Successfully Updated";
-$language['delete_success']="Record Has Been Successfully Deleted";
-
-$language['db_error']="MySQL Database Error. Please Check your query";
-
-$language['login_success']="Successfully Logged In";
-$language['un_pass_wrong']="Username and Passwords are not correct";
-$language['withdrawn_success']="Course has been Withdrawn Successfully";
-$language['enroll_success']="Record Has Been Successfully Enrolled";
-
-$language['welcome']="Welcome Employee";
-$language['not_enrolled']="You have not enrolled to the course yet. Please Enroll to the course first";
-$language['language_change']="language Changed Successfully";
-
 $language ['exam_result'] = 'نتيجة الاختبار';
 $language ['pass_or_fail'] = 'ناجح أو فاشل';
 $language ['fail_reason'] = 'سبب الفشل';
@@ -170,7 +138,7 @@ $language ['insert_success'] = "تم إدراج السجل بنجاح";
 $language ['update_success'] = "تم تحديث السجل بنجاح";
 $language ['delete_success'] = "تم حذف السجل بنجاح";
 
-$language ['db_error'] = "خطأ في قاعدة بيانات MySQL. يرجى التحقق من استفسارك" ;
+$language ['db_error'] = "خطأ في قاعدة بيانات MySQL. يرجى ملء جميع الحقول بشكل صحيح" ;
 
 $language ['login_success'] = "تم تسجيل الدخول بنجاح";
 $language ['un_pass_wrong'] = "اسم المستخدم وكلمات المرور غير صحيحة";

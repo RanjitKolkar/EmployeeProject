@@ -30,11 +30,12 @@ if($add_action == 'employee'){
  
      if (mysqli_query($db_conn, $query)) {
         $msg = 1;
+  header ("Location: add.php?add=employee&msg=".$msg."");
      } else {
         $msg = 4;
+  header ("Location: add.php?add=employee&msg=".$msg."");
      }
 
-  header ("Location: add.php?add=employee&msg=".$msg."");
 }
 // --------- End Insert Employee into DB
 
