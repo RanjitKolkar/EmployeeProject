@@ -137,7 +137,21 @@ $language ['direct_manager_grade']='Direct manager grade';
 $language ['work_test']='Work test';
 
 
+// Messages
+$language['insert_success']="Record Has Been Successfully Inserted";
+$language['update_success']="Record Has Been Successfully Updated";
+$language['delete_success']="Record Has Been Successfully Deleted";
 
+$language['db_error']="MySQL Database Error. Please Check your query";
+
+$language['login_success']="Successfully Logged In";
+$language['un_pass_wrong']="Username and Passwords are not correct";
+$language['withdrawn_success']="Course has been Withdrawn Successfully";
+$language['enroll_success']="Record Has Been Successfully Enrolled";
+
+$language['welcome']="Welcome Employee";
+$language['not_enrolled']="You have not enrolled to the course yet. Please Enroll to the course first";
+$language['language_change']="language Changed Successfully";
 
 
 ?>

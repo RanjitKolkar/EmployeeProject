@@ -11,8 +11,9 @@ if(isset($_POST['submit_language']))
         $query="UPDATE `language` SET `language_set`='$q1' WHERE lang_id=1"; // Fetch all the data from the table customers
 
         $result=mysqli_query($db_conn,$query);
-    }
     $msg=11;
-     header("location: index.php?msg=".$msg."");
+
  }
+    }
+         header("location: index.php");
 ?>

@@ -30,7 +30,9 @@ $result=mysqli_query($db_conn,$query);
      <body class="bg-primary">
        <div class="container">
       <nav class="navbar navbar-expand-lg bg-white text-white shadow-sm rounded">
-        <a class="navbar-brand" href="adminhome.php"><?php echo $language['Title'];?></a>
+        <a class="navbar-brand" href="adminhome.php">
+          <img src="logo.jpeg" alt="logo" width="60" height="60">
+        <!-- <?php echo $language['Page Title']?> --></a>
 
           <ul class="navbar-nav  mr-auto">
             <li class="nav-item">

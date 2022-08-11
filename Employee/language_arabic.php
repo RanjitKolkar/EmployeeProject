@@ -133,4 +133,52 @@ $language ['instructor_self_grade']='Instructor self grade';
 $language ['direct_manager_grade']='Direct manager grade';              
 $language ['work_test']='Work test';
 
+// Messages
+$language['insert_success']="Record Has Been Successfully Inserted";
+$language['update_success']="Record Has Been Successfully Updated";
+$language['delete_success']="Record Has Been Successfully Deleted";
+
+$language['db_error']="MySQL Database Error. Please Check your query";
+
+$language['login_success']="Successfully Logged In";
+$language['un_pass_wrong']="Username and Passwords are not correct";
+$language['withdrawn_success']="Course has been Withdrawn Successfully";
+$language['enroll_success']="Record Has Been Successfully Enrolled";
+
+$language['welcome']="Welcome Employee";
+$language['not_enrolled']="You have not enrolled to the course yet. Please Enroll to the course first";
+$language['language_change']="language Changed Successfully";
+
+$language ['exam_result'] = 'نتيجة الاختبار';
+$language ['pass_or_fail'] = 'ناجح أو فاشل';
+$language ['fail_reason'] = 'سبب الفشل';
+$language ['notes'] = 'ملاحظات';
+$language ['date_of_resit'] = 'تاريخ الاستعادة';
+
+$language ['resit_result'] = 'إعادة النتيجة';
+$language ['pass_fail_resit'] = 'فشل في إعادة الإرسال';
+
+
+$language ['instructor_grade'] = 'درجة المعلم';
+$language ['course_grade'] = "درجة المقرر";
+$language ['instructor_self_grade'] = 'التقدير الذاتي للمدرس';
+$language ['direct_manager_grade'] = "درجة مدير مباشر";
+$language ['work_test'] = 'اختبار العمل';
+
+// رسائل
+$language ['insert_success'] = "تم إدراج السجل بنجاح";
+$language ['update_success'] = "تم تحديث السجل بنجاح";
+$language ['delete_success'] = "تم حذف السجل بنجاح";
+
+$language ['db_error'] = "خطأ في قاعدة بيانات MySQL. يرجى التحقق من استفسارك" ;
+
+$language ['login_success'] = "تم تسجيل الدخول بنجاح";
+$language ['un_pass_wrong'] = "اسم المستخدم وكلمات المرور غير صحيحة";
+$language ['pulln_success'] = "تم سحب الدورة التدريبية بنجاح";
+$language ['register_success'] = "تم تسجيل السجل بنجاح";
+
+$language ['welcome'] = "مرحبًا بالموظف";
+$language ['not_enrolled'] = "لم تسجل في الدورة بعد. يرجى التسجيل في الدورة أولاً";
+$language ['language_change'] = "تم تغيير اللغة بنجاح";
+
 ?>
