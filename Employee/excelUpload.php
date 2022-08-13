@@ -7,17 +7,17 @@ require('dbConn.php');?>
             <?php include('toasts.php')?>
         <div class="jumbotron"><?php
 
-function createTableWithFirstRowasheader(){
+// function createTableWithFirstRowasheader(){
 
-$query = "CREATE TABLE IF NOT EXISTS $table_name ( id varchar(100),name varchar(100));";
+// $query_create_new_table = "CREATE TABLE IF NOT EXISTS $table_name ( id varchar(100),name varchar(100));";
  
-     if (mysqli_query($db_conn, $query)) {
-        echo "Successfully created";
-     } else {
-        echo "Table Already Exist";
-     }
+//      if (mysqli_query_create_new_table($db_conn, $query_create_new_table)) {
+//         echo "Successfully created";
+//      } else {
+//         echo "Table Already Exist";
+//      }
 
-}
+// }
 
 if(isset($_POST['Submit'])){
 
@@ -35,6 +35,7 @@ if(isset($_POST['Submit'])){
     $Reader = new SpreadsheetReader($uploadFilePath);	
 
     $totalSheet = count($Reader->sheets());
+    // echo $totalSheet;
 
 
 
@@ -70,9 +71,37 @@ if(isset($_POST['Submit'])){
       		$rowValue13=str_replace(" ","_",$Row[13],$i);
       		$rowValue14=str_replace(" ","_",$Row[14],$i);
 
+      		$rowValue15=str_replace(" ","_",$Row[15],$i);
+      		$rowValue16=str_replace(" ","_",$Row[16],$i);
+      		$rowValue17=str_replace(" ","_",$Row[17],$i);
+
+      		$rowValue18=str_replace(" ","_",$Row[18],$i);
+      		$rowValue19=str_replace(" ","_",$Row[19],$i);
+      		$rowValue20=str_replace(" ","_",$Row[20],$i);
+
+      		$rowValue21=str_replace(" ","_",$Row[21],$i);
+      		$rowValue22=str_replace(" ","_",$Row[22],$i);
+      		$rowValue23=str_replace(" ","_",$Row[23],$i);
+
+      		$rowValue24=str_replace(" ","_",$Row[24],$i);
+      		$rowValue25=str_replace(" ","_",$Row[25],$i);
+      		$rowValue26=str_replace(" ","_",$Row[26],$i);
+
+      		$rowValue27=str_replace(" ","_",$Row[27],$i);
+      		$rowValue28=str_replace(" ","_",$Row[28],$i);
+      		$rowValue29=str_replace(" ","_",$Row[29],$i);
+      		$rowValue30=str_replace(" ","_",$Row[30],$i);
+
+      		$rowValue31=str_replace(" ","_",$Row[31],$i);
+      		$rowValue32=str_replace(" ","_",$Row[32],$i);
+      		$rowValue33=str_replace(" ","_",$Row[33],$i);
+      		$rowValue34=str_replace(" ","_",$Row[34],$i);
+      		$rowValue35=str_replace(" ","_",$Row[35],$i);
+
 
 
       	if($first_row==1){
+      		echo $first_row."----". "<br>";
       		$header0=str_replace(" ","_",$Row[0],$i);
       		$header1=str_replace(" ","_",$Row[1],$i);
       		$header2=str_replace(" ","_",$Row[2],$i);
@@ -93,34 +122,100 @@ if(isset($_POST['Submit'])){
       		$header13=str_replace(" ","_",$Row[13],$i);
       		$header14=str_replace(" ","_",$Row[14],$i);
 
-      		
-      		// echo " ".$header0." "." ".$header1." "." ".$header2." ";
+      		$header15=str_replace(" ","_",$Row[15],$i);
+      		$header16=str_replace(" ","_",$Row[16],$i);
+      		$header17=str_replace(" ","_",$Row[17],$i);
 
-      		 $query = "CREATE TABLE $table_name ( $header0 varchar(100), $header1 varchar(100),$header2 varchar(100),$header3 varchar(100),$header4 varchar(100),$header5 varchar(100),$header6 varchar(100),$header7 varchar(100),$header8 varchar(100),$header9 varchar(100),$header10 varchar(100),$header11 varchar(100),$header12 varchar(100),$header13 varchar(100),$header14 varchar(100));";
- 
-		     if (mysqli_query($db_conn, $query)) {
-		        echo "Successfully created table";
+      		$header18=str_replace(" ","_",$Row[18],$i);
+      		$header19=str_replace(" ","_",$Row[19],$i);
+      		$header20=str_replace(" ","_",$Row[20],$i);
+
+      		$header21=str_replace(" ","_",$Row[21],$i);
+      		$header22=str_replace(" ","_",$Row[22],$i);
+      		$header23=str_replace(" ","_",$Row[23],$i);
+
+      		$header24=str_replace(" ","_",$Row[24],$i);
+      		$header25=str_replace(" ","_",$Row[25],$i);
+      		$header26=str_replace(" ","_",$Row[26],$i);
+
+      		$header27=str_replace(" ","_",$Row[27],$i);
+      		$header28=str_replace(" ","_",$Row[28],$i);
+      		$header29=str_replace(" ","_",$Row[29],$i);
+      		$header30=str_replace(" ","_",$Row[30],$i);
+      		$header31=str_replace(" ","_",$Row[31],$i);
+      		$header32=str_replace(" ","_",$Row[32],$i);
+      		$header33=str_replace(" ","_",$Row[33],$i);
+
+      		$header34=str_replace(" ","_",$Row[34],$i);
+      		$header35=str_replace(" ","_",$Row[35],$i);
+
+
+     		
+      		echo " ".$header0." "." ".$header1." "." ".$header2." ".$header3." "." ".$header4." "." ".$header5." ".$header6." "." ".$header7." "." ".$header8." ".$header9." ".$header10." "." ".$header11." "." ".$header12." ".$header13." "." ".$header14." "." ".$header15." ".$header16." "." ".$header17." "." ".$header18." ".$header19." ".$header20." "." ".$header21." "." ".$header22." ".$header23." "." ".$header24." "." ".$header25." ".$header26." "." ".$header27." "." ".$header28." ".$header29." ".$header30." "." ".$header31." "." ".$header32." ".$header33." "." ".$header34." "." ".$header35." "."<br><br>";
+
+
+
+      		 $query_create_new_table = "CREATE TABLE $table_name ( $header0 varchar(100), $header1 int(100),$header2 varchar(100),$header3 varchar(100),$header4 varchar(100),$header5 varchar(100),$header6 varchar(100),$header7 varchar(100),$header8 varchar(100),$header9 varchar(100),$header10 varchar(100),$header11 varchar(100),$header12 varchar(100),$header13 varchar(100),$header14 varchar(100),$header15 varchar(100),$header16 varchar(100),$header17 varchar(100),$header18 varchar(100),$header19 varchar(100),$header20 varchar(100),$header21 varchar(100),$header22 varchar(100),$header23 varchar(100),$header24 varchar(100),$header25 varchar(100),$header26 varchar(100),$header27 varchar(100),$header28 varchar(100),$header29 varchar(100),$header30 varchar(100),$header31 varchar(100),$header32 varchar(100),$header33 varchar(100),$header34 varchar(100),$header35 varchar(100));";
+
+ 			mysqli_query($db_conn, $query_create_new_table);
+    		$error_message = mysqli_error($db_conn);
+		      if($error_message == ""){
+		       echo "query_create_new_table Success: ".$error_message;
 		        
 		     } else {
-		     	$alreadyInserted=1;
-		        echo "Already Imported";
+		     	// $alreadyInserted=1;
+		       echo "query_create_new_table Failed: ".$error_message;
 		     }
 
-      		$first_row=0;
+      			$first_row=0;
 			}
-			else if($alreadyInserted==0){
-				echo " ".$rowValue0." "." ".$rowValue1." "." ".$rowValue2." <br>";
-				echo " ".$header0." "." ".$header1." "." ".$header2." <br>";
-						
-				// $query = "INSERT INTO $table_name($header0,$header1,$header2,) VALUES( '$rowValue0', '$rowValue1', '$rowValue2');";
+			else{
 
-				$query = "INSERT INTO $table_name( $header0,  $header1 ,$header2 ,$header3 ,$header4 ,$header5 ,$header6 ,$header7 ,$header8 ,$header9 ,$header10 ,$header11 ,$header12 ,$header13 ,$header14 ) VALUES( '$rowValue0',  '$rowValue1' ,'$rowValue2' ,'$rowValue3' ,'$rowValue4' ,'$rowValue5' ,'$rowValue6' ,'$rowValue7' ,'$rowValue8' ,'$rowValue9' ,'$rowValue10' ,'$rowValue11' ,'$rowValue12' ,'$rowValue13' ,'$rowValue14');";
- 
-		     if (mysqli_query($db_conn, $query)) {
-		        echo "Successfully inserted";
+						
+      		echo $first_row."-------------". "<br>" ;
+				// $query_create_new_table = "INSERT INTO $table_name($header0,$header1,$header2,) VALUES( '$rowValue0', '$rowValue1', '$rowValue2');";
+
+				$query_insert_new_table = "INSERT INTO $table_name( $header0,  $header1 ,$header2 ,$header3 ,$header4 ,$header5 ,$header6 ,$header7 ,$header8 ,$header9 ,$header10 ,$header11 ,$header12 ,$header13 ,$header14,$header15 ,$header16 ,$header17 ,$header18 ,$header19 ,$header20 ,$header21 ,$header22 ,$header23 ,$header24,$header25 ,$header26 ,$header27 ,$header28 ,$header29 ,$header30,$header31 ,$header32 ,$header33 ,$header34,$header35 ) VALUES( '$rowValue0',  '$rowValue1' ,'$rowValue2' ,'$rowValue3' ,'$rowValue4' ,'$rowValue5' ,'$rowValue6' ,'$rowValue7' ,'$rowValue8' ,'$rowValue9' ,'$rowValue10' ,'$rowValue11' ,'$rowValue12' ,'$rowValue13' ,'$rowValue14','$rowValue15' ,'$rowValue16' ,'$rowValue17' ,'$rowValue18' ,'$rowValue19' ,'$rowValue20','$rowValue21' ,'$rowValue22' ,'$rowValue23' ,'$rowValue24' ,'$rowValue25' ,'$rowValue26' ,'$rowValue27' ,'$rowValue28' ,'$rowValue29' ,'$rowValue30','$rowValue31' ,'$rowValue32' ,'$rowValue33' ,'$rowValue34','$rowValue35');";
+			mysqli_query($db_conn, $query_insert_new_table);
+ 			$error_message = mysqli_error($db_conn);
+		     if (mysqli_query($db_conn, $query_insert_new_table)) {
+		        echo "query_insert_new_table Success: ".$error_message. "<br>";
 		     } else {
-		        echo "failed";
+		       echo "query_insert_new_table failed: ".$error_message. "<br>" ;
 		     }
+		     	//12 entries
+				 $query_create_new_table_insertEmp ="INSERT INTO Employee(rank,employee_id,name,phone,sex,general_management,sub_management,location_of_work,nationality,section,category,from_needs_list) VALUES ( '$rowValue0',  '$rowValue1' ,'$rowValue2' ,'$rowValue3' ,'$rowValue4' ,'$rowValue5' ,'$rowValue6' ,'$rowValue7' ,'$rowValue8' ,'$rowValue9' ,'$rowValue10' ,'$rowValue11' );";
+
+		      //13
+		      $query_create_new_table_insertCourse ="INSERT INTO Course(course_name, contract_location,start_date, end_date, course_specialization, course_plan, no_of_days, hours_per_day, total_hours, instructor_1, hours_instructor_1, instructor_2,hours_instructor_2) VALUES ( '$rowValue12' ,'$rowValue13' ,'$rowValue14','$rowValue15' ,'$rowValue16' ,'$rowValue17' ,'$rowValue18' ,'$rowValue19' ,'$rowValue20','$rowValue21' ,'$rowValue22' ,'$rowValue23','$rowValue24' );";
+	
+
+		      //12
+		       $query_create_new_table_insertEnrol ="INSERT INTO `Enrolled`( `employee_id`, `course_name`, `exam_result`, `pass_or_fail`, `notes`, `date_of_resit`, `resit_result`, `pass_fail_resit`, `instructor_grade`, `course_grade`, `instructor_self_grade`, `direct_manager_grade`, `work_test`) VALUES( '$rowValue1' ,'$rowValue12' ,'$rowValue27','$rowValue25' ,'$rowValue26' ,'$rowValue27' ,'$rowValue28' ,'$rowValue29' ,'$rowValue30','$rowValue31' ,'$rowValue32' ,'$rowValue33' ,'$rowValue34','$rowValue35');";
+	
+			mysqli_query($db_conn, $query_create_new_table_insertEmp);
+			mysqli_query($db_conn, $query_create_new_table_insertCourse);
+			mysqli_query($db_conn, $query_create_new_table_insertEnrol);
+		   	$error_message = mysqli_error($db_conn);
+		     if (mysqli_query($db_conn, $query_create_new_table_insertEmp)) {
+		        echo "querySuccess:query_create_new_table_insertEmp ".$error_message. "<br>";
+		     } else {
+		       echo "queryfailed:query_create_new_table_insertEmp ".$error_message. "<br>" ;
+		     }
+		      	$error_message = mysqli_error($db_conn);
+		     if (mysqli_query($db_conn, $query_create_new_table_insertEmp)) {
+		        echo "querySuccess:query_create_new_table_insertCourse ".$error_message. "<br>";
+		     } else {
+		       echo "queryfailed:query_create_new_table_insertCourse ".$error_message. "<br>" ;
+		     }
+		      	$error_message = mysqli_error($db_conn);
+		     if (mysqli_query($db_conn, $query_create_new_table_insertEmp)) {
+		        echo "querySuccess: query_create_new_table_insertEnrol".$error_message. "<br>";
+		     } else {
+		       echo "queryfailed: query_create_new_table_insertEnrol".$error_message. "<br>" ;
+		     }
+
+
 			}
        }
     }
@@ -140,5 +235,5 @@ if(isset($_POST['Submit'])){
 
 ?>
 
-<a href="view.php?view=imported&filename=<?php echo $table_name?>" class="list-group-item list-group-item-action">View from database</a>
+<!-- <a href="view.php?view=imported&filename=<?php echo $table_name?>" class="list-group-item list-group-item-action">View from database</a> -->
 </div></div>
