@@ -1,5 +1,5 @@
 <?php
-include 'dbConn.php'; include('header.php');
+include 'dbConn.php'; include('admin_header.php');
 $searchErr = '';
 $employee_details='';
 if(isset($_POST['save']))
@@ -119,9 +119,10 @@ function displaySearch($value,$searchBy,$searchErr,$enterEmployeeText,$searchtex
                  }
                  else{?> 
       
-        <table class="table border border-warning table-striped">
-          <thead class="thead bg-warning">  
+        <table class="table border border-primary table-striped">
+          <thead class="thead bg-primary">  
           <tr>
+                <th scope="col"><?php echo $language['Action']?></th>
               <th scope="col"><?php echo $language['Employee ID']?></th>
               <th scope="col"><?php echo $language['Name']?></th>
               <th scope="col"><?php echo $language['Phone']?></th>
@@ -144,7 +145,15 @@ function displaySearch($value,$searchBy,$searchErr,$enterEmployeeText,$searchtex
         <tbody> <?php
                     foreach($employee_details as $key=>$value)
                     {
-                        ?> <tr>
+                        ?> <tr>               
+                         <td> 
+                  <div class="btn-group">
+                      <a href="edit.php?employee_id=<?php echo $value['employee_id'];?>&action=edit_employee" class="btn m-1 btn-primary"><?php echo $language['Edit']?> </a> 
+                       <a href="delete.php?employee_id=<?php echo $value['employee_id'];?>&action=delete_employee" class="btn m-1 btn-danger"><?php echo $language['Delete']?> </a>  
+                       </div> 
+
+
+                </td>
             <td> <?php echo $value['employee_id'];?> </td>
             <td> <?php echo $value['name'];?> </td>
             <td> <?php echo $value['phone'];?> </td>

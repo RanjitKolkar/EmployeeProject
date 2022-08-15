@@ -40,6 +40,8 @@ $language['Please_Select_value']="Please select the value.";
 $language['Update_Employee_Data']="Update Employee Data";
 $language['Update_Course_Data']="Update Course Data";
 $language['Update_Results_Data']="Update Results Data";
+$language['Search the employee to be enrolled']="Search the employee to be enrolled";
+$language['Search Employee']="Search Employee";
 
 // admin header
 $language['Hi Admin, welcome!!!']='Hi Admin, welcome!!!';
@@ -58,8 +60,8 @@ $language['Download All Course']='Download All Course';
 $language['Download All Enrolled']='Download All Enrolled';
 $language['Download Entire']='Download Entire';
 $language['Import Excel Sheet to Database']=' Import Excel Sheet to Database';
-$language['Upload Excel File']='Upload Excel File';
- $language['(only .xls files. make sure the name doesnot have special character including space)']='(only .xls files. make sure the name doesnot have special character including space)';
+$language['Upload Excel File']='Upload CSV File';
+ $language['text_import_condition']='(only .csv files. make sure the file name doesnot have special character including space)';
 $language['Import']='Import';
 
 

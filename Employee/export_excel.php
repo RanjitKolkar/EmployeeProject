@@ -82,7 +82,7 @@ function getAllEnrolled($connString) {
 function getAll($connString) {
 
     $filename = "all_employee".date('Ymd') . ".xls"; 
-    $sql_query = "SELECT * FROM Employee e LEFT JOIN Enrolled en ON e.employee_id = en.employee_id LEFT JOIN Course c ON c.course_id= en.course_id";
+    $sql_query = "SELECT * FROM Employee e LEFT JOIN Enrolled en ON e.employee_id = en.employee_id LEFT JOIN Course c ON c.course_name= en.course_name";
     $resultset = mysqli_query($connString, $sql_query) or die("database error:". mysqli_error($conn));
 
     while( $rows = mysqli_fetch_assoc($resultset) ) {

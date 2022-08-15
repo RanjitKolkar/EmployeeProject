@@ -18,6 +18,7 @@
             <hr>
             <div class="list-group border" style="border-color: #e3f2fd;">
                 <a class="list-group-item list-group-item-action " style="background-color: #e3f2fd;"><i class="material-icons" color:white>drafts</i><?php echo $language['View'];?> </a>
+                <a href="search_admin.php" class="list-group-item list-group-item-action"><?php echo $language['Search Employee'];?></a>
                 <a href="view.php?view=employee" class="list-group-item list-group-item-action"><?php echo $language['View all employee details'];?></a>
                 <a href="view.php?view=course" class="list-group-item list-group-item-action"><?php echo $language['View all course'];?></a>
                 <a href="view.php?view=enrolled" class="list-group-item list-group-item-action"><?php echo $language['View employee enrolled to course'];?></a>
@@ -36,10 +37,10 @@
                 <a class="list-group-item list-group-item-action " style="background-color: #e3f2fd;"><i class="material-icons" color:white>file_upload</i> <?php echo $language['Import Excel Sheet to Database'];?> </a>
 
                 <a class="list-group-item list-group-item-action">  
-                <form method="POST" action="excelUpload.php" enctype="multipart/form-data">
+                <form method="POST" action="csvImport.php" enctype="multipart/form-data">
                     <div class="form-group">
                         <label><?php echo $language['Upload Excel File'];?></label>
-                        <label><?php echo $language['(only .xls files. make sure the name doesnot have special character including space)'];?></label>
+                        <label><?php echo $language['text_import_condition'];?></label>
                         <input type="file" name="file" class="btn btn-outline-primary" class="form-control">
                     </div>
                     <div class="form-group">

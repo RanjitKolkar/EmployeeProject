@@ -7,7 +7,7 @@ if(isset($_POST['save']))
     if(!empty($_POST['search_ID']))
     {
         $search_id = $_POST['search_ID'];
-        $stmt = $con->prepare("select * from Employee where employee_id like '$search_id'");
+        $stmt = $con->prepare("select * from Employee where employee_id like '%$search_id%'");
         $stmt->execute();
         $employee_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
         // print_r($employee_details);

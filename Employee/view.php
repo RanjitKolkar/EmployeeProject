@@ -154,7 +154,7 @@ $result=mysqli_query($db_conn,$query);
 
               <th scope="col"><?php echo $language['Course Specialization'];?></th>
               <th scope="col"><?php echo $language['Course Plan'];?></th>
-              
+
               <th scope="col"><?php echo $language['Quarter'];?></th>
               <th scope="col"><?php echo $language['Month'];?></th>
               <th scope="col"><?php echo $language['Year'];?></th>
@@ -257,20 +257,24 @@ $result=mysqli_query($db_conn,$query);
             <tr>
 
               <th scope="col"><?php echo $language['Action'];?></th>
-              <th scope="col"><?php echo $language['Rank']?></th>
-              <th scope="col"><?php echo $language['Employee ID']?></th>
-              <th scope="col"><?php echo $language['Name']?></th>
-              <th scope="col"><?php echo $language['Phone']?></th>
-              <th scope="col"><?php echo $language['Email']?></th>
-              <th scope="col"><?php echo $language['Sex']?></th>
-              <th scope="col"><?php echo $language['General Management']?> </th>
-              <th scope="col"><?php echo $language['Sub Management']?> </th>
-              <th scope="col"><?php echo $language['Classification']?></th>
-              <th scope="col"><?php echo $language['Location of the work']?></th>
-              <th scope="col"><?php echo $language['Nationality']?></th>
-              <th scope="col"><?php echo $language['Section']?></th>
-              <th scope="col"><?php echo $language['Category']?></th>
-              <th scope="col"><?php echo $language['Needs List']?> </th>
+              <th scope="col"><?php echo $language['Employee ID'];?></th>
+              <th scope="col"><?php echo $language['Name'];?></th>
+
+              <th scope="col"><?php echo $language['exam_result'];?></th>
+              <th scope="col"><?php echo $language['pass_or_fail'];?></th>
+              <th scope="col"><?php echo $language['fail_reason'];?></th>
+              <th scope="col"><?php echo $language['notes'];?></th>
+              <th scope="col"><?php echo $language['date_of_resit'];?></th>
+
+              <th scope="col"><?php echo $language['resit_result'];?></th>
+              <th scope="col"><?php echo $language['pass_fail_resit'];?></th>
+
+
+              <th scope="col"><?php echo $language['instructor_grade'];?></th>
+              <th scope="col"><?php echo $language['course_grade'];?></th>              
+              <th scope="col"><?php echo $language['instructor_self_grade'];?></th>
+              <th scope="col"><?php echo $language['direct_manager_grade'];?></th>              
+              <th scope="col"><?php echo $language['work_test'];?></th>
 
             </tr>
           </thead>
@@ -299,7 +303,6 @@ $result=mysqli_query($db_conn,$query);
                   <td><?php echo $array[11];?></td>
                   <td><?php echo $array[12];?></td>
                   <td><?php echo $array[13];?></td>
-                  <td><?php echo $array[14];?></td>
               </tr>
 
 <?php endwhile; ?>
@@ -348,18 +351,21 @@ $result=mysqli_query($db_conn,$query);
         <table class="table border border-primary table-striped">
           <thead class="thead bg-primary">           
             <tr>
-              <th scope="col"><?php echo $language['Rank']?></th>
               <th scope="col"><?php echo $language['Employee ID']?></th>
               <th scope="col"><?php echo $language['Name']?></th>
               <th scope="col"><?php echo $language['Phone']?></th>
               <th scope="col"><?php echo $language['Email']?></th>
+
+              <th scope="col"><?php echo $language['Rank']?></th>
+              <th scope="col"><?php echo $language['Nationality']?></th>
               <th scope="col"><?php echo $language['Sex']?></th>
+              <th scope="col"><?php echo $language['Classification']?></th>
+
               <th scope="col"><?php echo $language['General Management']?> </th>
               <th scope="col"><?php echo $language['Sub Management']?> </th>
-              <th scope="col"><?php echo $language['Classification']?></th>
               <th scope="col"><?php echo $language['Location of the work']?></th>
-              <th scope="col"><?php echo $language['Nationality']?></th>
               <th scope="col"><?php echo $language['Section']?></th>
+
               <th scope="col"><?php echo $language['Category']?></th>
               <th scope="col"><?php echo $language['Needs List']?> </th>
             </tr>

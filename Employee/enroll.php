@@ -7,7 +7,7 @@ if(isset($_POST['save']))
     if(!empty($_POST['search_ID']))
     {
         $search_id = $_POST['search_ID'];
-        $stmt = $con->prepare("select * from Employee where employee_id like '$search_id'");
+        $stmt = $con->prepare("select * from Employee where employee_id like '%$search_id%'");
         $stmt->execute();
         $employee_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
         // print_r($employee_details);
@@ -37,31 +37,7 @@ if(isset($_POST['save']))
         $searchErr = "Please enter the information";
     }
 
-function getCourseList(){
 
-$query="select * from Employee limit 200"; // Fetch all the data from the table customers
-$result=mysqli_query($db_conn,$query);
-if ($result->num_rows > 0):;
-    while($array=mysqli_fetch_row($result)):?>
-
-              <tr>
-                  <td><?php echo $array[0];?></td>
-                  <td><?php echo $array[1];?></td>
-                  <td><?php echo $array[2];?></td>
-                  <td><?php echo $array[3];?></td>
-
-              </tr>
-
-<?php endwhile; ?>
-
-<?php else: ?>
-              <tr>
-                 <td colspan="3" rowspan="1" headers="">No Data Found</td>
-              </tr>
-<?php endif; 
-
-               mysqli_free_result($result); 
-}//end of if
 
 
 
@@ -76,22 +52,22 @@ if ($result->num_rows > 0):;
 include 'toasts.php';?>
   <div class="jumbotron">
     
-    <h3>Search the employee to be enrolled</h3>
+    <h3><?php echo$language['Search the employee to be enrolled'];?></h3>
 
 <hr>
     <form action="" method="post" class="mb-3">
       <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Search Employee</label>
+            <label class="input-group-text" for="inputGroupSelect01"><?php echo $language['Search_Employee'];?></label>
           </div>
         <select class="form-select btn-light custom-select" id="inputGroupSelect01" name="emp_search">
-          <option value="" disabled selected>Search By</option>
-          <option value="id">Employee Id</option>
-          <option value="name">Employee Name</option>
-          <option value="rank">Employee Rank</option>
+          <option value="" disabled selected><?php echo $language['Search_by'];?></option>
+          <option value="id"><?php echo $language['Employee ID'];?></option>
+          <option value="name"><?php echo $language['Name'];?></option>
+          <option value="rank"><?php echo $language['Rank'];?></option>
         </select>
       </div>
-      <input class="btn shadow btn-primary" type="submit" name="submit" value="Submit">
+      <input class="btn shadow btn-primary" type="submit" name="submit" value=<?php echo $language['Submit'];?>>
       <hr>
     </form> <?php
 
@@ -147,7 +123,7 @@ else:return 0;
 endif; 
 
                mysqli_free_result($result); 
-}//end of if
+}
 
 
 ?>
@@ -156,7 +132,7 @@ endif;
     <div class="table-responsive shadow-sm rounded"> <?php
                  if(!$employee_details)
                  {
-                    echo '<tr>No data found</tr>';
+                    echo '<tr>'.$language ['No_data_found'].'</tr>';
                  }
                  else{?> 
         <table class="table border border-warning table-striped">

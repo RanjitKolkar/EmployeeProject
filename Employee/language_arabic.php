@@ -45,6 +45,9 @@ $language['Please_Select_value']="الرجاء تحديد القيمة.";
 $language['Update_Employee_Data']="Update Employee Data";
 $language['Update_Course_Data']="Update Course Data";
 $language['Update_Results_Data']="Update Results Data";
+$language['Search the employee to be enrolled']="ابحث عن الموظف ليتم تسجيله";
+
+$language['Search Employee']="ابحث عن موظف";
 
 // Admin Header
 $language ['Hi Admin, welcome!!!'] = 'مرحبًا أيها المشرف ، مرحبًا بك !!!';
@@ -63,8 +66,8 @@ $language ['Download All Course'] = 'تحميل جميع الدورات';
 $language ['Download All Enrolled'] = 'تنزيل جميع المسجلين';
 $language ['Download Entire'] = 'تنزيل بالكامل';
 $language ['Import Excel Sheet to Database'] = 'استيراد ورقة Excel إلى قاعدة البيانات';
-$language ['Upload Excel File'] = 'تحميل ملف Excel';
-$language ['(only .xls files. make sure the name doesnot have special character including space)'] = '(ملفات .xls فقط. تأكد من أن الاسم لا يحتوي على حرف خاص بما في ذلك المسافة)';
+$language ['Upload Excel File'] = 'تحميل ملف CSV';
+$language ['text_import_condition'] = '(ملفات .csv فقط. تأكد من أن الاسم لا يحتوي على حرف خاص بما في ذلك المسافة)';
 $language ['Import'] = 'استيراد';
 
 
@@ -133,7 +136,7 @@ $language ['instructor_self_grade'] = 'التقدير الذاتي للمدرس'
 $language ['direct_manager_grade'] = "درجة مدير مباشر";
 $language ['work_test'] = 'اختبار العمل';
 
-// رسائل
+// Messages
 $language ['insert_success'] = "تم إدراج السجل بنجاح";
 $language ['update_success'] = "تم تحديث السجل بنجاح";
 $language ['delete_success'] = "تم حذف السجل بنجاح";
@@ -142,11 +145,14 @@ $language ['db_error'] = "خطأ في قاعدة بيانات MySQL. يرجى م
 
 $language ['login_success'] = "تم تسجيل الدخول بنجاح";
 $language ['un_pass_wrong'] = "اسم المستخدم وكلمات المرور غير صحيحة";
-$language ['pulln_success'] = "تم سحب الدورة التدريبية بنجاح";
-$language ['register_success'] = "تم تسجيل السجل بنجاح";
+$language ['withdrawn_success'] = "تم سحب الدورة التدريبية بنجاح";
+$language ['enroll_success'] = "تم تسجيل السجل بنجاح";
 
 $language ['welcome'] = "مرحبًا بالموظف";
 $language ['not_enrolled'] = "لم تسجل في الدورة بعد. يرجى التسجيل في الدورة أولاً";
 $language ['language_change'] = "تم تغيير اللغة بنجاح";
+
+
+
 
 ?>

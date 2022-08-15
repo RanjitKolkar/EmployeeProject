@@ -45,11 +45,13 @@ if(isset($_POST['Submit'])){
      	$Reader->ChangeSheet($i);
 		$first_row=1;
 		$alreadyInserted=0;
+		$count_rows=-1;
+		$count_success_rows=1;
+		$count_fail_rows=1;
 
-      foreach ($Reader as $Row)
-
-      {		
-
+      foreach ($Reader as $Row){		
+      	
+      		$count_rows++;
 			
       		$rowValue0=str_replace(" ","_",$Row[0],$i);
       		$rowValue1=str_replace(" ","_",$Row[1],$i);
@@ -101,7 +103,7 @@ if(isset($_POST['Submit'])){
 
 
       	if($first_row==1){
-      		echo $first_row."----". "<br>";
+      		// echo $first_row."----". "<br>";
       		$header0=str_replace(" ","_",$Row[0],$i);
       		$header1=str_replace(" ","_",$Row[1],$i);
       		$header2=str_replace(" ","_",$Row[2],$i);
@@ -151,7 +153,7 @@ if(isset($_POST['Submit'])){
 
 
      		
-      		echo " ".$header0." "." ".$header1." "." ".$header2." ".$header3." "." ".$header4." "." ".$header5." ".$header6." "." ".$header7." "." ".$header8." ".$header9." ".$header10." "." ".$header11." "." ".$header12." ".$header13." "." ".$header14." "." ".$header15." ".$header16." "." ".$header17." "." ".$header18." ".$header19." ".$header20." "." ".$header21." "." ".$header22." ".$header23." "." ".$header24." "." ".$header25." ".$header26." "." ".$header27." "." ".$header28." ".$header29." ".$header30." "." ".$header31." "." ".$header32." ".$header33." "." ".$header34." "." ".$header35." "."<br><br>";
+      		// echo " ".$header0." "." ".$header1." "." ".$header2." ".$header3." "." ".$header4." "." ".$header5." ".$header6." "." ".$header7." "." ".$header8." ".$header9." ".$header10." "." ".$header11." "." ".$header12." ".$header13." "." ".$header14." "." ".$header15." ".$header16." "." ".$header17." "." ".$header18." ".$header19." ".$header20." "." ".$header21." "." ".$header22." ".$header23." "." ".$header24." "." ".$header25." ".$header26." "." ".$header27." "." ".$header28." ".$header29." ".$header30." "." ".$header31." "." ".$header32." ".$header33." "." ".$header34." "." ".$header35." "."<br><br>";
 
 
 
@@ -160,11 +162,11 @@ if(isset($_POST['Submit'])){
  			mysqli_query($db_conn, $query_create_new_table);
     		$error_message = mysqli_error($db_conn);
 		      if($error_message == ""){
-		       echo "query_create_new_table Success: ".$error_message;
+		       echo "<br>query_create_new_table Success: ".$error_message;
 		        
-		     } else {
+		    	 } else {
 		     	// $alreadyInserted=1;
-		       echo "query_create_new_table Failed: ".$error_message;
+		       echo "<br>query_create_new_table Failed: ".$error_message;
 		     }
 
       			$first_row=0;
@@ -172,66 +174,82 @@ if(isset($_POST['Submit'])){
 			else{
 
 						
-      		echo $first_row."-------------". "<br>" ;
+      		// echo $first_row."-------------". "<br>" ;
 				// $query_create_new_table = "INSERT INTO $table_name($header0,$header1,$header2,) VALUES( '$rowValue0', '$rowValue1', '$rowValue2');";
 
 				$query_insert_new_table = "INSERT INTO $table_name( $header0,  $header1 ,$header2 ,$header3 ,$header4 ,$header5 ,$header6 ,$header7 ,$header8 ,$header9 ,$header10 ,$header11 ,$header12 ,$header13 ,$header14,$header15 ,$header16 ,$header17 ,$header18 ,$header19 ,$header20 ,$header21 ,$header22 ,$header23 ,$header24,$header25 ,$header26 ,$header27 ,$header28 ,$header29 ,$header30,$header31 ,$header32 ,$header33 ,$header34,$header35 ) VALUES( '$rowValue0',  '$rowValue1' ,'$rowValue2' ,'$rowValue3' ,'$rowValue4' ,'$rowValue5' ,'$rowValue6' ,'$rowValue7' ,'$rowValue8' ,'$rowValue9' ,'$rowValue10' ,'$rowValue11' ,'$rowValue12' ,'$rowValue13' ,'$rowValue14','$rowValue15' ,'$rowValue16' ,'$rowValue17' ,'$rowValue18' ,'$rowValue19' ,'$rowValue20','$rowValue21' ,'$rowValue22' ,'$rowValue23' ,'$rowValue24' ,'$rowValue25' ,'$rowValue26' ,'$rowValue27' ,'$rowValue28' ,'$rowValue29' ,'$rowValue30','$rowValue31' ,'$rowValue32' ,'$rowValue33' ,'$rowValue34','$rowValue35');";
 			mysqli_query($db_conn, $query_insert_new_table);
  			$error_message = mysqli_error($db_conn);
 		     if (mysqli_query($db_conn, $query_insert_new_table)) {
-		        echo "query_insert_new_table Success: ".$error_message. "<br>";
+		        echo "<br>Row Success insertion: ".$count_rows;
+		     	$count_success_rows++;
+
 		     } else {
-		       echo "query_insert_new_table failed: ".$error_message. "<br>" ;
+		       // echo "query_insert_new_table failed: ".$error_message. "<br>" ;
+		     	echo "<br>Failed row: ".$count_rows.": ".$rowValue0." ".$rowValue1." ".$rowValue2." ".$rowValue3." . . . . . ".$error_message;
+		     	$count_fail_rows++;
 		     }
 		     	//12 entries
-				 $query_create_new_table_insertEmp ="INSERT INTO Employee(rank,employee_id,name,phone,sex,general_management,sub_management,location_of_work,nationality,section,category,from_needs_list) VALUES ( '$rowValue0',  '$rowValue1' ,'$rowValue2' ,'$rowValue3' ,'$rowValue4' ,'$rowValue5' ,'$rowValue6' ,'$rowValue7' ,'$rowValue8' ,'$rowValue9' ,'$rowValue10' ,'$rowValue11' );";
+				 $query_insert_Emp ="INSERT INTO Employee(rank,employee_id,name,phone,sex,general_management,sub_management,location_of_work,nationality,section,category,from_needs_list) VALUES ( '$rowValue0',  '$rowValue1' ,'$rowValue2' ,'$rowValue3' ,'$rowValue4' ,'$rowValue5' ,'$rowValue6' ,'$rowValue7' ,'$rowValue8' ,'$rowValue9' ,'$rowValue10' ,'$rowValue11' );";
 
 		      //13
-		      $query_create_new_table_insertCourse ="INSERT INTO Course(course_name, contract_location,start_date, end_date, course_specialization, course_plan, no_of_days, hours_per_day, total_hours, instructor_1, hours_instructor_1, instructor_2,hours_instructor_2) VALUES ( '$rowValue12' ,'$rowValue13' ,'$rowValue14','$rowValue15' ,'$rowValue16' ,'$rowValue17' ,'$rowValue18' ,'$rowValue19' ,'$rowValue20','$rowValue21' ,'$rowValue22' ,'$rowValue23','$rowValue24' );";
+		      $query_insert_Course ="INSERT INTO Course(course_name, contract_location,start_date, end_date, course_specialization, course_plan, no_of_days, hours_per_day, total_hours, instructor_1, hours_instructor_1, instructor_2,hours_instructor_2) VALUES ( '$rowValue12' ,'$rowValue13' ,'$rowValue14','$rowValue15' ,'$rowValue16' ,'$rowValue17' ,'$rowValue18' ,'$rowValue19' ,'$rowValue20','$rowValue21' ,'$rowValue22' ,'$rowValue23','$rowValue24' );";
 	
-
+// drop table test5;delete from Employee;Delete from Course;
 		      //12
-		       $query_create_new_table_insertEnrol ="INSERT INTO `Enrolled`( `employee_id`, `course_name`, `exam_result`, `pass_or_fail`, `notes`, `date_of_resit`, `resit_result`, `pass_fail_resit`, `instructor_grade`, `course_grade`, `instructor_self_grade`, `direct_manager_grade`, `work_test`) VALUES( '$rowValue1' ,'$rowValue12' ,'$rowValue27','$rowValue25' ,'$rowValue26' ,'$rowValue27' ,'$rowValue28' ,'$rowValue29' ,'$rowValue30','$rowValue31' ,'$rowValue32' ,'$rowValue33' ,'$rowValue34','$rowValue35');";
+		       $query_insert_Enroll ="INSERT INTO `Enrolled`( `employee_id`, `course_name`, `exam_result`, `pass_or_fail`, `notes`, `date_of_resit`, `resit_result`, `pass_fail_resit`, `instructor_grade`, `course_grade`, `instructor_self_grade`, `direct_manager_grade`, `work_test`) VALUES( '$rowValue1' ,'$rowValue12' ,'$rowValue25' ,'$rowValue26' ,'$rowValue27' ,'$rowValue28' ,'$rowValue29' ,'$rowValue30','$rowValue31' ,'$rowValue32' ,'$rowValue33' ,'$rowValue34','$rowValue35');";
 	
-			mysqli_query($db_conn, $query_create_new_table_insertEmp);
-			mysqli_query($db_conn, $query_create_new_table_insertCourse);
-			mysqli_query($db_conn, $query_create_new_table_insertEnrol);
+			mysqli_query($db_conn, $query_insert_Emp);
+
 		   	$error_message = mysqli_error($db_conn);
-		     if (mysqli_query($db_conn, $query_create_new_table_insertEmp)) {
-		        echo "querySuccess:query_create_new_table_insertEmp ".$error_message. "<br>";
+		     if (mysqli_query($db_conn, $query_insert_Emp)) {
+		        echo "<br>querySuccess: query_insert_Emp ".$error_message. "<br>";
 		     } else {
-		       echo "queryfailed:query_create_new_table_insertEmp ".$error_message. "<br>" ;
+		       echo "<br>queryFailed: query_insert_Emp ".$error_message. "<br>" ;
 		     }
+
+
+			mysqli_query($db_conn, $query_insert_Course);
 		      	$error_message = mysqli_error($db_conn);
-		     if (mysqli_query($db_conn, $query_create_new_table_insertEmp)) {
-		        echo "querySuccess:query_create_new_table_insertCourse ".$error_message. "<br>";
+		     if (mysqli_query($db_conn, $query_insert_Course)) {
+		        echo "<br>querySuccess:query_insert_Course ".$error_message. "<br>";
 		     } else {
-		       echo "queryfailed:query_create_new_table_insertCourse ".$error_message. "<br>" ;
+		       echo "<br>queryFailed:query_insert_Course ".$error_message. "<br>" ;
 		     }
+
+		     
+			mysqli_query($db_conn, $query_insert_Enroll);
 		      	$error_message = mysqli_error($db_conn);
-		     if (mysqli_query($db_conn, $query_create_new_table_insertEmp)) {
-		        echo "querySuccess: query_create_new_table_insertEnrol".$error_message. "<br>";
+		     if (mysqli_query($db_conn, $query_insert_Emp)) {
+		        echo "<br>querySuccess: query_insert_Enroll ".$error_message. "<br>";
 		     } else {
-		       echo "queryfailed: query_create_new_table_insertEnrol".$error_message. "<br>" ;
+		       echo "<br>queryFailed: query_insert_Enroll ".$error_message. "<br>" ;
 		     }
 
 
 			}
-       }
-    }
+       	}//End of For rows
+
+       	echo "<br><br>-----------------------------Report -----------------------------";
+       	echo "<br>Total rows in a sheet: ".$count_rows."";
+       	echo "<br>Total successful insertion: ".$count_success_rows."";
+       	echo "<br>Total failed insertion: ".$count_fail_rows."";
+
+    }//End of For sheets
 
 
 
 
 
-  }else { 
+  } //End of seconf IF types
+  else { 
 
     die("<br/>Sorry, File type is not allowed. Only .xls file."); 
 
   }
 
 
-}
+} //End of first IF
 
 ?>
 

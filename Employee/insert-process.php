@@ -42,7 +42,6 @@ if($add_action == 'employee'){
 // --------- Insert Course into DB
 if($add_action == 'course'){
 
-     $course_id = $_POST['course_id'];
      $course_name = $_POST['course_name'];
      $course_specialization = $_POST['course_specialization'];
 
@@ -63,19 +62,24 @@ if($add_action == 'course'){
      $instructor_2 = $_POST['instructor_2'];
      $hours_instructor_2 = $_POST['hours_instructor_2'];
      
-     $query = "INSERT INTO Course(course_id, course_name, start_date, end_date, quarter, month, year, course_specialization, course_plan, no_of_days, hours_per_day, total_hours, contract_location, instructor_1, hours_instructor_1, instructor_2,hours_instructor_2) VALUES ( '$course_id','$course_name', '$start_date', '$end_date', '$quarter', '$month', '$year', '$course_specialization', '$course_plan', '$no_of_days', '$hours_per_day', '$total_hours', '$contract_location', '$instructor_1', '$hours_instructor_1','$instructor_2','$hours_instructor_2')";
-     
-     $result=mysqli_query($db_conn, $query);
-    $error_message = mysqli_error($db_conn);
-    if($error_message == ""){
-        // echo "Query Success: ".$error_message;
-      $msg=1;
+     $query = "INSERT INTO Course( course_name, start_date, end_date, quarter, month, year, course_specialization, course_plan, no_of_days, hours_per_day, total_hours, contract_location, instructor_1, hours_instructor_1, instructor_2,hours_instructor_2) VALUES ( '$course_name', '$start_date', '$end_date', '$quarter', '$month', '$year', '$course_specialization', '$course_plan', '$no_of_days', '$hours_per_day', '$total_hours', '$contract_location', '$instructor_1', '$hours_instructor_1','$instructor_2','$hours_instructor_2')";
+          if (mysqli_query($db_conn, $query)) {
+        $msg = 1;
+  header ("Location: add.php?msg=".$msg."");
      } else {
-        // echo "Query Failed: ".$error_message;
-      $msg=4;
+        $msg = 4;
+  header ("Location: add.php?msg=".$msg."");
      }
+    //  $result=mysqli_query($db_conn, $query);
+    // $error_message = mysqli_error($db_conn);
+    // if($error_message == ""){
+    //     // echo "Query Success: ".$error_message;
 
-  header ("Location: add.php?add=course&msg=".$msg."");
+    //  } else {
+    //     // echo "Query Failed: ".$error_message;
+
+    //  }
+
 }
 // --------- End Insert Course into DB
 

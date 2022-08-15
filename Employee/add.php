@@ -8,10 +8,12 @@ $add_action = 'employee';
     <div class="row">
         <div class="col-md-12">
 <?php
-            if(isset($_GET['add'])){ 
-            $add_action = $_GET['add']; 
-            } 
-            if($add_action == 'employee'){
+if(isset($_GET['add'])){ 
+$add_action = $_GET['add']; 
+} 
+
+if($add_action == 'employee')
+{
 
   ?><!---------------------------------------------- Create Employee -->
           <div class="page-header">
@@ -26,7 +28,7 @@ $add_action = 'employee';
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><?php echo $language['Employee ID'];?></span>
                         </div>
-                    <input type="text"  placeholder="only numbers" name="employee_id" class="form-control" required="">
+                    <input type="number"  placeholder="only numbers" name="employee_id" class="form-control" required="">
                     </div>
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
@@ -134,8 +136,12 @@ $add_action = 'employee';
 
 
 // <!---------------------------------------------- Create Course -->
-            }elseif ($add_action == 'course') {
+}       
+
+if ($add_action == 'course') 
+{
   ?>
+    
           <div class="page-header">
                 <h3><?php echo $language['Create Course details'];?></h3>
                 <hr>
@@ -146,12 +152,7 @@ $add_action = 'employee';
                                
 
                 <div class="form-group row">
-                    <div class="col input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Course ID'];?></span>
-                        </div>
-                    <input type="text" placeholder="only numbers" name="course_id" class="form-control" required="">
-                    </div>
+
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><?php echo $language['Course Name'];?></span>
@@ -243,7 +244,7 @@ $add_action = 'employee';
 
                 
 
-                  <div class="form-group row">
+                  <div id="new_chq" class="form-group row">
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><?php echo $language['Instructor 1'];?></span>
@@ -256,7 +257,7 @@ $add_action = 'employee';
                         </div>
                      <input type="text" name="hours_instructor_1" class="form-control" ></div>                  
                     </div>
-                                      <div class="form-group row">
+   <!--                  <div  id="new_chq" class="form-group row">
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><?php echo $language['Instructor 2'];?></span>
@@ -268,14 +269,56 @@ $add_action = 'employee';
                             <span class="input-group-text" id="basic-addon1"><?php echo $language['Hours Instructor 2'];?></span>
                         </div>
                      <input type="text" name="hours_instructor_2" class="form-control" ></div>                  
-                    </div>
-              
+                    </div> --> 
+<div class="col input-group mb-3">
+     <div class="col-sm-12">              
+
+  <button class="btn btn-outline-primary " onclick="add()">Add Instructor(Max:6) </button>
+  <button class="btn btn-outline-danger "onclick="remove()">Remove Instructor</button>
+
+  <input type="hidden" value="1" id="total_chq"></div></div>
+                    <script type="text/javascript">
+
+                        count=1;
+function add(){
+    count++;
+      var new_chq_no = parseInt($('#total_chq').val())+1;
+      // var new_input="<input type='text' id='new_"+new_chq_no+"'>";
+      var new_input="     <div id='new_"+new_chq_no+"' class='form-group row'>                    <div class='col input-group mb-3'>                        <div class='input-group-prepend'>                            <span class='input-group-text' id='basic-addon1'>Instructor "+count+"</span>                        </div>                    <input type='text' name='instructor_"+count+"' class='form-control' >                    </div>                     <div class='col input-group mb-3'>                        <div class='input-group-prepend'>                           <span class='input-group-text' id='basic-addon1'>Hours Instructor "+count+"</span>                        </div>                     <input type='text' name='hours_instructor_"+count+"' class='form-control' ></div>  </div>";
+
+      $('#new_chq').append(new_input);
+      $('#total_chq').val(new_chq_no)
+    }
+    function remove(){count--;
+      var last_chq_no = $('#total_chq').val();
+      if(last_chq_no>1){
+        $('#new_'+last_chq_no).remove();
+        $('#total_chq').val(last_chq_no-1);
+      }
+    }</script>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+             
+
+
+     
+
+
                   <div class="form-group row">
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><?php echo $language['contract_location'];?></span>
                         </div>
                     <input type="text" name="contract_location" class="form-control" >
+                    </div>                   
+                    </div>
+                                      <div class="form-group row">
+                    <div class="col input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Added Instructor(Yes/No)</span>
+                        </div>
+                    <input type="text" placeholder="Pleaser enter 'yes' if you have added more than one istructor else 'No'" class="form-control" required>
                     </div>                   
                     </div>
 

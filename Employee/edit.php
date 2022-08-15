@@ -167,7 +167,7 @@ if($view_action == 'edit_course')
         <div class="col-md-12">
             <?php
 
-            $query = "SELECT  * FROM Course WHERE course_id='" . $_GET["course_id"] . "'"; 
+            $query = "SELECT  * FROM Course WHERE course_name='" . $_GET["course_name"] . "'"; 
             // Fetch data from Course
 
             $result=mysqli_query($db_conn,$query);
@@ -180,12 +180,7 @@ if($view_action == 'edit_course')
              
           
               <div class="form-group row">
-                    <div class="col input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Course ID'];?></span>
-                        </div>
-                    <input type="text" value="<?php echo $mytable["course_id"]; ?>" placeholder="Enter Course Id" name="course_id" class="form-control" required="">
-                    </div>
+
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><?php echo $language['Course Name'];?></span>
@@ -354,12 +349,7 @@ if($view_action == 'update_results')
         <form action="update-results.php" method="POST">
 
                 <div class="form-group row">
-                    <div class="col input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><?php echo $language['Course ID'];?></span>
-                        </div>
-                    <input type="text" name="course_id" class="form-control" value="<?php echo $mytable['course_id']; ?> " readonly>
-                  </div>
+   
                     <div class="col input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><?php echo $language['Employee ID'];?></span>
