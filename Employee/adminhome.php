@@ -37,7 +37,7 @@
                 <a class="list-group-item list-group-item-action " style="background-color: #e3f2fd;"><i class="material-icons" color:white>file_upload</i> <?php echo $language['Import Excel Sheet to Database'];?> </a>
 
                 <a class="list-group-item list-group-item-action">  
-                <form method="POST" action="csvImport.php" enctype="multipart/form-data">
+                <form method="POST" action="excelUpload.php" enctype="multipart/form-data">
                     <div class="form-group">
                         <label><?php echo $language['Upload Excel File'];?></label>
                         <label><?php echo $language['text_import_condition'];?></label>
