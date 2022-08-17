@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 15, 2022 at 01:33 PM
+-- Generation Time: Aug 17, 2022 at 06:59 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -145,6 +145,14 @@ CREATE TABLE `Imported` (
   `work_test` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `Imported`
+--
+
+INSERT INTO `Imported` (`rank`, `employee_ID`, `name`, `mobile_number`, `gender`, `general_management`, `sub_management`, `location_of_work`, `nationality`, `section`, `category`, `from_needs_list`, `course_name`, `contract_location`, `start_date`, `end_date`, `course_specialization`, `course_plan`, `days`, `hourse_per_day`, `total_hours`, `instructor_1`, `hours_instructor1`, `instructor_2`, `hours_instructor2`, `exam_result`, `pass_fail`, `notes`, `date_of_resit`, `resit_result`, `pass_fail_resit`, `instructor_grade`, `course_grade`, `instructor_self_grade`, `direct_manager_grade`, `work_test`) VALUES
+('rank', 12, NULL, 'mobile_number', 'gender', 'general_management', 'sub_management', 'location_of_work', 'nationality', 'section', 'category', 'from_needs_list', 'course_name', 'contract_location', '2001-01-22', '2002-01-22', 'course_specialization', 'course_plan', 'days', 'hourse_per_day', 'total_hours', 'instructor_2', 'hours_instructor2', 'instructor_3', 'hours_instructor3', 'exam_result', 'pass_fail', 'notes', '2001-01-20', 'resit_result', 'pass_fail_resit', 'instructor_grade', 'course_grade', 'instructor_self_grade', 'direct_manager_grade', 'work_test'),
+('rank', 145, NULL, 'mobile_number', 'gender', 'general_management', 'sub_management', 'location_of_work', 'nationality', 'section', 'category', 'from_needs_list', 'course_name', 'contract_location', '2002-01-22', '2003-01-22', 'course_specialization', 'course_plan', 'days', 'hourse_per_day', 'total_hours', 'instructor_3', 'hours_instructor3', 'instructor_4', 'hours_instructor4', 'exam_result', 'pass_fail', 'notes', '2002-01-20', 'resit_result', 'pass_fail_resit', 'instructor_grade', 'course_grade', 'instructor_self_grade', 'direct_manager_grade', 'work_test');
+
 -- --------------------------------------------------------
 
 --
@@ -161,7 +169,7 @@ CREATE TABLE `language` (
 --
 
 INSERT INTO `language` (`language_set`, `lang_id`) VALUES
-('arabic', 1);
+('english', 1);
 
 -- --------------------------------------------------------
 
